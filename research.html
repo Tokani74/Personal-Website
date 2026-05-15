@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Tanish Kothapalle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <nav id="nav">
+        <a href="index.html" class="nav-logo">TK</a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html" class="nav-active">Research</a></li>
+            <li><a href="contact.html" class="nav-btn">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header page-header--blue">
+        <div class="container">
+            <p class="section-label">// academic research</p>
+            <h1 class="page-title">Research &amp; <span class="accent-blue">Publication</span></h1>
+            <p class="page-subtitle">Molecular dynamics simulation research conducted as a Research Assistant — resulting in a peer-reviewed publication.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="project-section section" id="nanoparticle">
+            <div class="container">
+
+                <!-- Overview -->
+                <div class="proj-header reveal">
+                    <div class="proj-meta">
+                        <span class="proj-num" style="color:var(--blue)">02</span>
+                        <span class="proj-type">Research Assistant</span>
+                        <span class="badge completed">Completed</span>
+                    </div>
+                    <h2 class="proj-title">Nanoparticle Indentation</h2>
+                    <p class="proj-lead">
+                        Conducted molecular dynamics simulations using LAMMPS to study high-strain-rate collisions of single-crystal aluminum nanoparticles. The goal was to determine the optimal impact velocity for applications such as micro-cold spray — a technique for coating surfaces without heat.
+                    </p>
+                    <div class="proj-tech-strip" style="--strip-color: var(--blue)">
+                        <span>LAMMPS</span><span>OVITO</span><span>Python</span><span>Materials Science</span><span>Data Analysis</span>
+                    </div>
+                </div>
+
+                <!-- Publication callout -->
+                <div class="pub-callout reveal">
+                    <div class="pub-icon">&#128196;</div>
+                    <div class="pub-text">
+                        <div class="pub-label">Published Paper</div>
+                        <div class="pub-title">Simulation of High Strain Rate Contact of Single Crystal Al Spheres</div>
+                    </div>
+                    <div class="pub-badge">Peer Reviewed</div>
+                </div>
+
+                <!-- Full-width: LAMMPS code -->
+                <div class="section-sub reveal">
+                    <h3 class="sub-title">Simulation Code</h3>
+                    <p class="sub-desc">Scripts controlled collision speed, crystal lattice orientation, indenter direction reversal, and data collection across thousands of timesteps.</p>
+                </div>
+                <div class="img-grid-1 reveal">
+                    <figure class="img-wrap img-wrap--code">
+                        <img src="images/nano-code.jpg" alt="LAMMPS simulation code showing collision parameters and data collection" loading="lazy">
+                        <figcaption>LAMMPS simulation script — variables for nanoparticle velocity, crystal orientation, and data dump parameters</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Data visualization -->
+                <div class="section-sub reveal">
+                    <h3 class="sub-title">Data Analysis &amp; Visualization</h3>
+                    <p class="sub-desc">Raw simulation output was processed into structural analysis and force-depth graphs. Crystal structure changes (FCC → HCP → amorphous) and impact force were plotted across a range of impact velocities from 1 m/s to 1,000 m/s.</p>
+                </div>
+                <div class="img-grid-3 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/nano-ovito.jpg" alt="OVITO visualization of aluminum nanoparticle crystal structure" loading="lazy">
+                        <figcaption>OVITO visualization — green (FCC), red (HCP), grey (amorphous/surface)</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/nano-atoms.jpg" alt="Graph of change in atom count vs displacement showing structural phase changes" loading="lazy">
+                        <figcaption>Change in atom count vs. displacement — tracks FCC-to-HCP-to-amorphous transitions</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/nano-force.jpg" alt="Force vs depth graph for varying impact speeds 1 to 1000 m/s" loading="lazy">
+                        <figcaption>Force vs. depth at 1–1,000 m/s — higher velocity dramatically increases peak force</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Methodology -->
+                <div class="section-sub reveal">
+                    <h3 class="sub-title">Methodology</h3>
+                </div>
+                <div class="method-grid reveal">
+                    <div class="method-step">
+                        <div class="ms-num">01</div>
+                        <h4>Setup</h4>
+                        <p>Defined nanoparticle parameters: FCC crystal lattice orientation, sphere diameter (6 nm), and indenter geometry in LAMMPS input scripts.</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="ms-num">02</div>
+                        <h4>Simulation</h4>
+                        <p>Ran high-strain-rate collision simulations across 9 impact velocities. Collected force, displacement, and per-atom structural data at each timestep.</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="ms-num">03</div>
+                        <h4>Analysis</h4>
+                        <p>Used OVITO to classify atom structure (FCC, HCP, other). Plotted force-depth curves and tracked dislocation nucleation and amorphization events.</p>
+                    </div>
+                    <div class="method-step">
+                        <div class="ms-num">04</div>
+                        <h4>Publication</h4>
+                        <p>Findings contributed to a peer-reviewed paper on optimal impact conditions for micro-cold spray applications.</p>
+                    </div>
+                </div>
+
+                <!-- Obstacle / Solution -->
+                <div class="proj-details reveal">
+                    <div class="detail-col">
+                        <h3>Challenges</h3>
+                        <ul class="detail-list">
+                            <li>Determining which impact velocity range produced useful plastic deformation without full fragmentation</li>
+                            <li>Learning crystal structure terminology — FCC, HCP, Burgers vectors, dislocation mechanics — with no prior background</li>
+                        </ul>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Approach</h3>
+                        <p>Stayed intellectually curious and unafraid to ask questions, even "basic" ones. Continuously sought feedback, built domain knowledge iteratively, and used that understanding to tune simulation variables toward ideal deformation behavior.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ── NAV TO OTHER PAGES ── -->
+    <section class="page-nav-strip">
+        <div class="container">
+            <a href="projects.html" class="pns-link">
+                <span class="pns-label">Also explore</span>
+                <span class="pns-title">Engineering Projects &rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>Tanish Kothapalle &copy; 2025</span>
+            <a href="index.html" class="footer-home">&#8592; Home</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

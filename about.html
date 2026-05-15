@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Tanish Kothapalle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <nav id="nav">
+        <a href="index.html" class="nav-logo">TK</a>
+        <ul class="nav-links">
+            <li><a href="about.html" class="nav-active">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="contact.html" class="nav-btn">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+        <div class="container">
+            <p class="section-label">// about &amp; info</p>
+            <h1 class="page-title">Tanish <span class="accent">Kothapalle</span></h1>
+            <p class="page-subtitle">Engineering student. Hardware builder. Electronics Lead at UT Austin.</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ── BIO ── -->
+        <section class="section">
+            <div class="container">
+                <div class="about-layout">
+                    <div class="about-bio reveal">
+                        <p class="section-label">// who i am</p>
+                        <p>I'm an engineer with a builder's mindset. I don't just design systems on paper — I fabricate, assemble, solder, and iterate until they actually work. My projects span the full stack: writing Python scripts to control hardware over radio, designing and etching custom PCBs, and modeling structural components in CAD.</p>
+                        <p>What makes my work distinctive is breadth without shallowness. I've written LAMMPS simulation code for published nanoscale research, designed a two-board custom electronics system for AR glasses from scratch, and built a hand-gesture-controlled aircraft. Each project required deep dives into unfamiliar domains — and I've learned to be comfortable being the least experienced person in the room.</p>
+                        <p>I'm currently looking for internships and engineering roles where I can apply hardware and software skills together, ideally in robotics, embedded systems, or product development.</p>
+                    </div>
+                    <div class="about-sidebar reveal">
+                        <div class="info-card">
+                            <h3>At a Glance</h3>
+                            <ul class="info-list">
+                                <li>
+                                    <span class="il-label">School</span>
+                                    <span class="il-val">University of Texas at Austin</span>
+                                </li>
+                                <li>
+                                    <span class="il-label">Role</span>
+                                    <span class="il-val">Electronics Lead, UT Austin Makerspace</span>
+                                </li>
+                                <li>
+                                    <span class="il-label">Email</span>
+                                    <span class="il-val"><a href="mailto:tanisk74@gmail.com">tanisk74@gmail.com</a></span>
+                                </li>
+                                <li>
+                                    <span class="il-label">LinkedIn</span>
+                                    <span class="il-val"><a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener">tanish-kothapalle</a></span>
+                                </li>
+                                <li>
+                                    <span class="il-label">Status</span>
+                                    <span class="il-val il-status"><span class="blink-dot"></span> Open to opportunities</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-mini">
+                                <div class="stat-val">4+</div>
+                                <div class="stat-key">Projects</div>
+                            </div>
+                            <div class="stat-mini">
+                                <div class="stat-val">1</div>
+                                <div class="stat-key">Publication</div>
+                            </div>
+                            <div class="stat-mini">
+                                <div class="stat-val">2</div>
+                                <div class="stat-key">Custom PCBs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ROLE ── -->
+        <section class="section role-section">
+            <div class="container">
+                <p class="section-label">// leadership</p>
+                <div class="role-card reveal">
+                    <div class="role-icon">&#9883;</div>
+                    <div class="role-body">
+                        <h2>Electronics Lead</h2>
+                        <h3>UT Austin Makerspace</h3>
+                        <p>As Electronics Lead, I oversee the electronics area of UT Austin's student Makerspace — helping students prototype PCBs, debug circuits, and learn soldering. I apply those same skills to my own projects, including hand-assembling two custom boards for the AR glasses directly at the Makerspace and 3D-printing propellers for the RC plane.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── SKILLS ── -->
+        <section class="section skills-section">
+            <div class="container">
+                <p class="section-label">// skills &amp; tools</p>
+                <h2 class="section-title reveal">What I Work With</h2>
+
+                <div class="skills-cards reveal">
+
+                    <div class="skill-card" data-accent="green">
+                        <div class="sc-icon">&#9096;</div>
+                        <h3>Hardware &amp; Electronics</h3>
+                        <ul class="sc-list">
+                            <li>PCB Design &amp; Layout (KiCad)</li>
+                            <li>Schematic Capture</li>
+                            <li>SMD Soldering &amp; Hand Assembly</li>
+                            <li>Arduino (TX/RX, Servo Control)</li>
+                            <li>Bluetooth &amp; Radio Communication</li>
+                            <li>LiPo Battery Systems &amp; ESC</li>
+                            <li>Embedded Firmware</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card" data-accent="teal">
+                        <div class="sc-icon">&#9881;</div>
+                        <h3>CAD &amp; Fabrication</h3>
+                        <ul class="sc-list">
+                            <li>Onshape (primary)</li>
+                            <li>SolidWorks</li>
+                            <li>3D Printing — FDM (PETG, TPU, PLA)</li>
+                            <li>Foam Board Fabrication</li>
+                            <li>Structural Design (trusses, fillets)</li>
+                            <li>Design for Manufacturing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-card" data-accent="blue">
+                        <div class="sc-icon">&#128187;</div>
+                        <h3>Software &amp; Simulation</h3>
+                        <ul class="sc-list">
+                            <li>Python</li>
+                            <li>OpenCV (computer vision)</li>
+                            <li>LAMMPS (molecular dynamics)</li>
+                            <li>OVITO (simulation visualization)</li>
+                            <li>Data Analysis &amp; Graphing</li>
+                            <li>HTML / CSS / JavaScript</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ── PROJECTS SNAPSHOT ── -->
+        <section class="section">
+            <div class="container">
+                <p class="section-label">// work</p>
+                <h2 class="section-title reveal">Projects &amp; Research</h2>
+                <div class="snapshot-grid">
+                    <a href="projects.html#ar-glasses" class="snapshot-card reveal" data-accent="green">
+                        <span class="sc-num">01</span>
+                        <h4>AR Speech-to-Text Glasses</h4>
+                        <p>Custom PCBs, KiCad, Onshape CAD frame</p>
+                        <span class="sc-status ongoing">Ongoing</span>
+                    </a>
+                    <a href="research.html" class="snapshot-card reveal" data-accent="blue">
+                        <span class="sc-num">02</span>
+                        <h4>Nanoparticle Indentation</h4>
+                        <p>LAMMPS simulations, published paper</p>
+                        <span class="sc-status completed">Published</span>
+                    </a>
+                    <a href="projects.html#hand-tracking" class="snapshot-card reveal" data-accent="teal">
+                        <span class="sc-num">03</span>
+                        <h4>Hand-Tracking RC Plane</h4>
+                        <p>Python/OpenCV, Arduino, radio control</p>
+                        <span class="sc-status completed">Completed</span>
+                    </a>
+                    <a href="projects.html#battlebot" class="snapshot-card reveal" data-accent="purple">
+                        <span class="sc-num">04</span>
+                        <h4>Battlebot</h4>
+                        <p>SolidWorks, 3D printing, LiPo electronics</p>
+                        <span class="sc-status completed">Completed</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CONTACT ── -->
+        <section class="section contact-section">
+            <div class="container">
+                <p class="section-label">// contact</p>
+                <div class="contact-inner reveal">
+                    <h2>Let's Build Something</h2>
+                    <p>I'm actively seeking internships and engineering roles. Whether you want to discuss a project, an opportunity, or just geek out about hardware — I'm here for it.</p>
+                    <div class="contact-options">
+                        <a href="mailto:tanisk74@gmail.com" class="contact-item">
+                            <span class="ci-icon">&#9993;</span>
+                            <div class="ci-text">
+                                <div class="ci-label">Email</div>
+                                <div class="ci-val">tanisk74@gmail.com</div>
+                            </div>
+                            <span class="ci-arrow">&rarr;</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener" class="contact-item">
+                            <span class="ci-icon ci-icon-li">in</span>
+                            <div class="ci-text">
+                                <div class="ci-label">LinkedIn</div>
+                                <div class="ci-val">tanish-kothapalle</div>
+                            </div>
+                            <span class="ci-arrow">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>Tanish Kothapalle &copy; 2025</span>
+            <a href="index.html" class="footer-home">&#8592; Home</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

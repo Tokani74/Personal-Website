@@ -1,4 +1,24 @@
 /* ═══════════════════════════════════════
+   IMAGE FALLBACK
+   Show a styled placeholder when an image
+   file doesn't exist yet.
+═══════════════════════════════════════ */
+document.querySelectorAll('.img-wrap img').forEach(img => {
+    const handle = function() {
+        if (this.naturalWidth === 0 || !this.complete) {
+            this.style.display = 'none';
+            const ph = document.createElement('div');
+            ph.className = 'img-placeholder';
+            ph.textContent = this.alt || 'Image coming soon';
+            this.parentElement.insertBefore(ph, this);
+        }
+    };
+    img.addEventListener('error', handle);
+    // Also check after load in case browser cached a broken state
+    img.addEventListener('load', handle);
+});
+
+/* ═══════════════════════════════════════
    SCROLL PROGRESS BAR
 ═══════════════════════════════════════ */
 const progressBar = document.getElementById('scroll-progress');

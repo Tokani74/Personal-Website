@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects — Tanish Kothapalle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="scroll-progress"></div>
+
+    <nav id="nav">
+        <a href="index.html" class="nav-logo">TK</a>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html" class="nav-active">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="contact.html" class="nav-btn">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ── PAGE HEADER ── -->
+    <header class="page-header">
+        <div class="container">
+            <p class="section-label">// engineering projects</p>
+            <h1 class="page-title">What I've <span class="accent">Built</span></h1>
+            <p class="page-subtitle">Hardware, software, and everything in between — from concept to physical prototype.</p>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ════════════════════════════
+             PROJECT 01 — AR GLASSES
+        ════════════════════════════ -->
+        <section class="project-section section" id="ar-glasses">
+            <div class="container">
+
+                <div class="proj-header reveal">
+                    <div class="proj-meta">
+                        <span class="proj-num" style="color:var(--green)">01</span>
+                        <span class="proj-type">Personal Project</span>
+                        <span class="badge ongoing">Ongoing</span>
+                    </div>
+                    <h2 class="proj-title">AR Speech-to-Text Glasses</h2>
+                    <p class="proj-lead">
+                        Designing glasses that display real-time subtitles on the lens — the device listens to nearby speech, sends audio via Bluetooth to a phone or laptop for STT processing, then receives and displays the transcribed text back on the lens.
+                    </p>
+                    <div class="proj-tech-strip">
+                        <span>KiCad</span><span>Onshape</span><span>PCB Design</span><span>Bluetooth</span><span>Embedded Systems</span>
+                    </div>
+                </div>
+
+                <!-- Images row 1: CAD + PCB -->
+                <div class="img-grid-2 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/ar-cad.jpg" alt="CAD model of custom AR glasses frame with wire channels" loading="lazy">
+                        <figcaption>Custom glasses frame CAD (Onshape) — internal channels route 3 wires per side</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/ar-pcb.jpg" alt="Two custom hand-assembled PCBs for the AR glasses" loading="lazy">
+                        <figcaption>Two hand-assembled PCBs — power board (left) and processing/display board (right)</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Images row 2: KiCad schematics + layout -->
+                <div class="img-grid-2 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/ar-schematic.jpg" alt="KiCad PCB schematic for AR glasses" loading="lazy">
+                        <figcaption>KiCad schematics — full board layout designed in approximately 2 months</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/ar-layout.jpg" alt="KiCad PCB layout top view" loading="lazy">
+                        <figcaption>KiCad PCB layout — modified from open-source smart glasses reference design</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Details -->
+                <div class="proj-details reveal">
+                    <div class="detail-col">
+                        <h3>What I Built</h3>
+                        <ul class="detail-list">
+                            <li>Custom CAD glasses frame with internal wire channels designed in Onshape</li>
+                            <li>Two custom PCBs hand-assembled at the UT Austin Makerspace: a power board and a processing/display board</li>
+                            <li>Complete KiCad schematics and PCB layout — full design completed in ~2 months</li>
+                            <li>Modified an open-source smart glasses firmware model to fit specific hardware requirements</li>
+                        </ul>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Obstacle</h3>
+                        <p>Unable to achieve consistent power delivery through the original monolithic PCB design.</p>
+                        <h3 style="margin-top:1.25rem">Solution</h3>
+                        <p>Split the large PCB into multiple smaller, purpose-built boards for easier troubleshooting and probing. New prototypes have resolved several power issues — development is ongoing.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="proj-divider"></div>
+
+        <!-- ════════════════════════════
+             PROJECT 03 — HAND-TRACKING PLANE
+        ════════════════════════════ -->
+        <section class="project-section section" id="hand-tracking">
+            <div class="container">
+
+                <div class="proj-header reveal">
+                    <div class="proj-meta">
+                        <span class="proj-num" style="color:var(--teal)">03</span>
+                        <span class="proj-type">Personal Project</span>
+                        <span class="badge completed">Completed</span>
+                    </div>
+                    <h2 class="proj-title">Hand-Tracking RC Plane</h2>
+                    <p class="proj-lead">
+                        A fully functional RC plane constructed from scratch and controlled entirely by hand gestures — a PC webcam tracks finger joints via Python and OpenCV, translating hand movement into servo commands transmitted by radio to an Arduino onboard the aircraft.
+                    </p>
+                    <div class="proj-tech-strip">
+                        <span>Python</span><span>OpenCV</span><span>Arduino</span><span>Radio TX/RX</span><span>3D Printing</span><span>Foam Board</span>
+                    </div>
+                </div>
+
+                <!-- Images row 1: propellers + plane body -->
+                <div class="img-grid-2 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/plane-props.jpg" alt="3D printed propellers for the RC plane" loading="lazy">
+                        <figcaption>3D-printed propellers — printed at the UT Austin Makerspace</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/plane-body.jpg" alt="Foam board RC plane airframe model" loading="lazy">
+                        <figcaption>Foam board airframe — cut and assembled by hand</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Images row 2: OpenCV + Arduino -->
+                <div class="img-grid-2 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/plane-opencv.jpg" alt="Python OpenCV hand joint tracking screenshot" loading="lazy">
+                        <figcaption>Python/OpenCV tracking finger joints in real-time — joint displacement maps to throttle and direction</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/plane-arduino.jpg" alt="Arduino board used as radio transmitter" loading="lazy">
+                        <figcaption>Arduino radio transmitter — encodes control packets sent to onboard Arduino receiver</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Details -->
+                <div class="proj-details reveal">
+                    <div class="detail-col">
+                        <h3>What I Built</h3>
+                        <ul class="detail-list">
+                            <li>Foam board airframe with hand-cut wings, fuselage, and control surfaces</li>
+                            <li>3D-printed propellers printed at UT Austin's Makerspace</li>
+                            <li>Python/OpenCV hand-tracking: finger joint positions map to speed and direction inputs</li>
+                            <li>Dual-Arduino radio system — ground transmitter parses Python output and sends packets to onboard receiver controlling servos</li>
+                        </ul>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Obstacle</h3>
+                        <p>Finding the optimal motor power-to-propeller-size-to-aircraft-weight ratio through trial and error was inefficient and time-consuming.</p>
+                        <h3 style="margin-top:1.25rem">Solution / Lesson Learned</h3>
+                        <p>While the plane ultimately flew, the key takeaway was to use aerodynamic lift calculations upfront rather than relying purely on physical iteration — saves time and material.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="proj-divider"></div>
+
+        <!-- ════════════════════════════
+             PROJECT 04 — BATTLEBOT
+        ════════════════════════════ -->
+        <section class="project-section section" id="battlebot">
+            <div class="container">
+
+                <div class="proj-header reveal">
+                    <div class="proj-meta">
+                        <span class="proj-num" style="color:var(--purple)">04</span>
+                        <span class="proj-type">Team Competition</span>
+                        <span class="badge completed">Completed</span>
+                    </div>
+                    <h2 class="proj-title">Battlebot</h2>
+                    <p class="proj-lead">
+                        A combat robot built to destroy opponents using rapid movement, a steel spinning weapon, and a hard 3D-printed PETG/TPU chassis — designed in SolidWorks and largely executed solo despite being a team project.
+                    </p>
+                    <div class="proj-tech-strip">
+                        <span>SolidWorks</span><span>3D Printing</span><span>PETG / TPU</span><span>ESC</span><span>LiPo Systems</span><span>Radio TX/RX</span>
+                    </div>
+                </div>
+
+                <!-- Images row 1: Full CAD + Drivetrain CAD -->
+                <div class="img-grid-2 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/bot-cad.jpg" alt="Full battlebot CAD assembly in SolidWorks" loading="lazy">
+                        <figcaption>Full CAD assembly — weapon system, PETG/TPU chassis, drivetrain, and electronics bay</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/bot-wheel.jpg" alt="Battlebot drivetrain wheel CAD" loading="lazy">
+                        <figcaption>Drivetrain CAD — future iteration will replace direct motor-to-hub with a pulley system</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Images row 2: Electronics + Chassis -->
+                <div class="img-grid-2 reveal">
+                    <figure class="img-wrap">
+                        <img src="images/bot-electronics.jpg" alt="Battlebot electronics wiring — LiPo, ESC, radio, motors" loading="lazy">
+                        <figcaption>Electronics layout — LiPo battery, ESC, radio transmitter, drive motors, and weapon motor</figcaption>
+                    </figure>
+                    <figure class="img-wrap">
+                        <img src="images/bot-chassis.jpg" alt="Partially assembled 3D printed battlebot chassis" loading="lazy">
+                        <figcaption>Partially assembled chassis — designed with ramped surface, trusses, fillets, and bearing seats</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Details -->
+                <div class="proj-details reveal">
+                    <div class="detail-col">
+                        <h3>What I Built</h3>
+                        <ul class="detail-list">
+                            <li>Full SolidWorks CAD assembly: weapon system, PETG/TPU chassis, drivetrain, electronics mounting</li>
+                            <li>3D-printed chassis featuring ramped surface, structural trusses, fillets, and bearing seats</li>
+                            <li>Electronics: LiPo battery, ESC, radio TX/RX, independent drive motors, weapon motor</li>
+                            <li>Iterated on drivetrain design — next version uses a pulley rather than direct motor-to-hub drive</li>
+                        </ul>
+                    </div>
+                    <div class="detail-col">
+                        <h3>Obstacles</h3>
+                        <ul class="detail-list">
+                            <li>No prior battlebot experience on the team</li>
+                            <li>Team conflicts left me as the sole contributor</li>
+                            <li>Designing to strict weight and size constraints took far longer than expected</li>
+                        </ul>
+                        <h3 style="margin-top:1.25rem">Solution</h3>
+                        <p>Create the prototype design much earlier in the timeline and build in explicit buffer for setbacks, revisions, and unexpected solo work.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── NAV TO OTHER PAGES ── -->
+    <section class="page-nav-strip">
+        <div class="container">
+            <a href="research.html" class="pns-link">
+                <span class="pns-label">Also explore</span>
+                <span class="pns-title">Research &rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>Tanish Kothapalle &copy; 2025</span>
+            <a href="index.html" class="footer-home">&#8592; Home</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
