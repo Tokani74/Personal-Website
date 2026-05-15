@@ -107,147 +107,121 @@ if (typedEl) {
 }
 
 /* ═══════════════════════════════════════
-   PCB-STYLE CANVAS ANIMATION
-   Nodes on a soft grid, connected by
-   traces, with animated signal packets
-   travelling along them.
+   SAKURA + JAZZ CANVAS ANIMATION
+   Falling cherry blossom petals and
+   floating musical notes drifting upward.
 ═══════════════════════════════════════ */
 (function initCanvas() {
     const canvas = document.getElementById('canvas');
     if (!canvas) return;
+    const ctx = canvas.getContext('2d');
 
-    const ctx    = canvas.getContext('2d');
-    const ACCENT = '163, 255, 78';   // RGB of --green
-    const SPACING     = 88;
-    const CONNECT_MAX = 118;
+    const PETAL_COLORS = [
+        [255, 179, 198],  // sakura pink
+        [196, 181, 253],  // lavender
+        [147, 197, 253],  // sky blue
+        [253, 236, 220],  // warm cream
+        [134, 239, 172],  // mint
+        [249, 199,  79],  // warm gold
+    ];
 
-    let nodes       = [];
-    let connections = [];
-    let signals     = [];
-    let mouse       = { x: -9999, y: -9999 };
+    const NOTES = ['♩', '♪', '♫', '♬'];
+
+    let petals = [];
+    let notes  = [];
     let animId;
 
-    /* ── Build grid nodes & connections ── */
+    function makePetal() {
+        const color = PETAL_COLORS[Math.floor(Math.random() * PETAL_COLORS.length)];
+        return {
+            x:       Math.random() * canvas.width,
+            y:      -20 - Math.random() * 200,
+            size:    3 + Math.random() * 5.5,
+            speed:   0.5 + Math.random() * 1.1,
+            drift:   (Math.random() - 0.5) * 0.6,
+            angle:   Math.random() * Math.PI * 2,
+            spin:    (Math.random() - 0.5) * 0.035,
+            color:   color,
+            alpha:   0.14 + Math.random() * 0.32,
+            phase:   Math.random() * Math.PI * 2,
+            wave:    0.3 + Math.random() * 0.9,
+        };
+    }
+
+    function makeNote() {
+        const color = PETAL_COLORS[Math.floor(Math.random() * 3)];
+        return {
+            x:     Math.random() * canvas.width,
+            y:     canvas.height + 20,
+            glyph: NOTES[Math.floor(Math.random() * NOTES.length)],
+            size:  10 + Math.random() * 9,
+            speed: 0.28 + Math.random() * 0.45,
+            drift: (Math.random() - 0.5) * 0.25,
+            alpha: 0.07 + Math.random() * 0.16,
+            color: color,
+            phase: Math.random() * Math.PI * 2,
+        };
+    }
+
     function buildScene() {
-        nodes       = [];
-        connections = [];
-        signals     = [];
-
-        const W    = canvas.width;
-        const H    = canvas.height;
-        const cols = Math.ceil(W / SPACING) + 1;
-        const rows = Math.ceil(H / SPACING) + 1;
-
-        for (let c = 0; c <= cols; c++) {
-            for (let r = 0; r <= rows; r++) {
-                if (Math.random() < 0.62) {
-                    nodes.push({
-                        x:     c * SPACING + (Math.random() - 0.5) * 22,
-                        y:     r * SPACING + (Math.random() - 0.5) * 22,
-                        size:  Math.random() * 1.4 + 0.7,
-                        phase: Math.random() * Math.PI * 2,
-                        speed: 0.012 + Math.random() * 0.009,
-                    });
-                }
-            }
+        petals = [];
+        notes  = [];
+        for (let i = 0; i < 55; i++) {
+            const p = makePetal();
+            p.y = Math.random() * canvas.height;
+            petals.push(p);
         }
-
-        for (let i = 0; i < nodes.length; i++) {
-            for (let j = i + 1; j < nodes.length; j++) {
-                const dx = nodes[i].x - nodes[j].x;
-                const dy = nodes[i].y - nodes[j].y;
-                const d  = Math.sqrt(dx * dx + dy * dy);
-                if (d < CONNECT_MAX) {
-                    connections.push({ a: i, b: j, d });
-                }
-            }
+        for (let i = 0; i < 9; i++) {
+            const n = makeNote();
+            n.y = Math.random() * canvas.height;
+            notes.push(n);
         }
     }
 
-    /* ── Spawn a signal packet on a random trace ── */
-    function spawnSignal() {
-        if (connections.length === 0 || signals.length > 18) return;
-        const conn = connections[Math.floor(Math.random() * connections.length)];
-        // Randomly decide direction
-        const fromIdx = Math.random() < 0.5 ? conn.a : conn.b;
-        const toIdx   = fromIdx === conn.a  ? conn.b : conn.a;
-        signals.push({
-            from:     nodes[fromIdx],
-            to:       nodes[toIdx],
-            progress: 0,
-            speed:    0.007 + Math.random() * 0.013,
-        });
+    function drawPetal(p) {
+        const [r, g, b] = p.color;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.angle);
+        ctx.beginPath();
+        ctx.ellipse(0, -p.size * 0.55, p.size * 0.5, p.size * 1.05, 0, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${r},${g},${b},${p.alpha})`;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(0, -p.size * 0.55, p.size * 0.5, p.size * 1.05, Math.PI / 2, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${r},${g},${b},${p.alpha * 0.65})`;
+        ctx.fill();
+        ctx.restore();
     }
 
-    /* ── Main draw loop ── */
     function draw() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Occasionally spawn a new signal
-        if (Math.random() < 0.06) spawnSignal();
-
-        /* Draw traces */
-        for (const conn of connections) {
-            const a     = nodes[conn.a];
-            const b     = nodes[conn.b];
-            const alpha = (1 - conn.d / CONNECT_MAX) * 0.1;
-
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(${ACCENT}, ${alpha})`;
-            ctx.lineWidth   = 0.8;
-            ctx.moveTo(a.x, a.y);
-            ctx.lineTo(b.x, b.y);
-            ctx.stroke();
-        }
-
-        /* Draw nodes */
-        for (const n of nodes) {
-            n.phase += n.speed;
-            const pulse = 0.22 + 0.18 * Math.sin(n.phase);
-
-            // Mouse influence
-            const mdx  = mouse.x - n.x;
-            const mdy  = mouse.y - n.y;
-            const mdst = Math.sqrt(mdx * mdx + mdy * mdy);
-            const inf  = Math.max(0, 1 - mdst / 190);
-
-            // Outer glow on hover
-            if (inf > 0.1) {
-                ctx.beginPath();
-                ctx.arc(n.x, n.y, n.size + 4 + inf * 3, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(${ACCENT}, ${inf * 0.12})`;
-                ctx.fill();
+        for (const p of petals) {
+            p.phase += 0.017;
+            p.y     += p.speed;
+            p.x     += p.drift + Math.sin(p.phase) * p.wave;
+            p.angle += p.spin;
+            if (p.y > canvas.height + 30) {
+                p.y = -20; p.x = Math.random() * canvas.width;
+                p.phase = Math.random() * Math.PI * 2;
             }
-
-            // Node dot
-            ctx.beginPath();
-            ctx.arc(n.x, n.y, n.size + inf * 1.8, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${ACCENT}, ${pulse + inf * 0.5})`;
-            ctx.fill();
+            drawPetal(p);
         }
 
-        /* Draw & advance signal packets */
-        signals = signals.filter(sig => {
-            sig.progress += sig.speed;
-            if (sig.progress >= 1) return false;
-
-            const x = sig.from.x + (sig.to.x - sig.from.x) * sig.progress;
-            const y = sig.from.y + (sig.to.y - sig.from.y) * sig.progress;
-
-            // Outer glow
-            ctx.beginPath();
-            ctx.arc(x, y, 5, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${ACCENT}, 0.18)`;
-            ctx.fill();
-
-            // Bright core
-            ctx.beginPath();
-            ctx.arc(x, y, 2, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(${ACCENT}, 1)`;
-            ctx.fill();
-
-            return true;
-        });
+        for (const n of notes) {
+            n.phase += 0.011;
+            n.y     -= n.speed;
+            n.x     += Math.sin(n.phase) * 0.35 + n.drift;
+            if (n.y < -30) {
+                n.y = canvas.height + 20;
+                n.x = Math.random() * canvas.width;
+            }
+            const [r, g, b] = n.color;
+            ctx.font      = `${n.size}px serif`;
+            ctx.fillStyle = `rgba(${r},${g},${b},${n.alpha})`;
+            ctx.fillText(n.glyph, n.x, n.y);
+        }
 
         animId = requestAnimationFrame(draw);
     }
@@ -260,13 +234,7 @@ if (typedEl) {
         draw();
     }
 
-    window.addEventListener('mousemove', e => {
-        mouse.x = e.clientX;
-        mouse.y = e.clientY;
-    });
-
     window.addEventListener('resize', resize);
-
     resize();
 })();
 
