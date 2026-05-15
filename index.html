@@ -1,17 +1,371 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tanish Kothapalle — Engineering Portfolio</title>
+    <meta name="description" content="Engineering portfolio of Tanish Kothapalle — PCB designer, embedded systems builder, and Electronics Lead at UT Austin.">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Tanish</h1>
-    <a href="/Personal-Website/contact.html">contact</a>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">TK</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact" class="nav-btn">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section id="hero">
+        <canvas id="canvas"></canvas>
+        <div class="hero-inner">
+            <div class="hero-tag">
+                <span class="blink-dot"></span>
+                Electronics Lead &mdash; UT Austin Makerspace
+            </div>
+            <h1 class="hero-name">
+                <span class="name-first">Tanish</span>
+                <span class="name-last">Kothapalle</span>
+            </h1>
+            <div class="hero-typed">
+                <span id="typed"></span><span class="type-cursor">_</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="mailto:tanisk74@gmail.com" class="btn-ghost">Get in Touch</a>
+            </div>
+            <div class="hero-meta">
+                <a href="mailto:tanisk74@gmail.com">tanisk74@gmail.com</a>
+                <span class="meta-dot">&bull;</span>
+                <a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener">LinkedIn</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-track"></div>
+            <span>scroll</span>
+        </div>
+    </section>
+
+    <!-- ═══════════ ABOUT ═══════════ -->
+    <section id="about" class="section">
+        <div class="container">
+            <p class="section-label">// 01 &nbsp;about</p>
+            <div class="about-layout">
+                <div class="about-text reveal">
+                    <h2>Building at the intersection of <em>hardware</em> and <em>software</em></h2>
+                    <p>I'm an engineer with a builder's mindset — I don't just design systems, I fabricate, assemble, and iterate until they work. From custom PCBs and AR headwear to molecular dynamics simulations with a published paper, I've worked across the full engineering stack.</p>
+                    <p>As <strong>Electronics Lead</strong> at the University of Texas at Austin's Makerspace, I help other students bring ideas to life while continuously advancing my own projects.</p>
+                </div>
+                <div class="stats-grid reveal">
+                    <div class="stat">
+                        <div class="stat-val">4+</div>
+                        <div class="stat-key">Engineering Projects</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-val">1</div>
+                        <div class="stat-key">Published Paper</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-val">2</div>
+                        <div class="stat-key">Custom PCBs Built</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-val">&infin;</div>
+                        <div class="stat-key">Problems to Solve</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ PROJECTS ═══════════ -->
+    <section id="projects" class="section">
+        <div class="container">
+            <p class="section-label">// 02 &nbsp;projects</p>
+            <h2 class="section-title reveal">What I've Built</h2>
+
+            <div class="projects-list">
+
+                <!-- 01 AR Glasses -->
+                <article class="project-card reveal" data-accent="green">
+                    <div class="card-accent-bar"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-num">01</span>
+                            <span class="card-badge ongoing">Ongoing</span>
+                        </div>
+                        <p class="card-category">Personal Project</p>
+                        <h3 class="card-title">AR Speech-to-Text Glasses</h3>
+                        <p class="card-desc">
+                            Glasses that display real-time subtitles on the lens. A microphone captures audio, transmits via Bluetooth to a phone or laptop for speech recognition, then sends the analyzed text back to the glasses display.
+                        </p>
+
+                        <div class="card-expandable" id="proj-1">
+                            <div class="card-details">
+                                <div class="detail-group">
+                                    <h4>What I Built</h4>
+                                    <ul>
+                                        <li>Custom CAD glasses frame with internal wire channels — designed in Onshape</li>
+                                        <li>Two hand-assembled PCBs: a dedicated power board and a processing/display board</li>
+                                        <li>Complete KiCad schematics and PCB layout, finished in approximately 2 months</li>
+                                        <li>Modified open-source smart glasses firmware to fit my hardware requirements</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-group">
+                                    <h4>Obstacle &amp; Solution</h4>
+                                    <p>The original monolithic PCB couldn't deliver consistent power. I split it into smaller purpose-built boards, enabling easier probing and debugging. New prototypes have resolved several power delivery issues and are still being refined.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span>KiCad</span><span>Onshape</span><span>PCB Design</span><span>Bluetooth</span><span>Embedded</span>
+                            </div>
+                            <button class="expand-btn" onclick="toggleExpand('proj-1', this)">Details &darr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 02 Nanoparticle -->
+                <article class="project-card reveal" data-accent="blue">
+                    <div class="card-accent-bar"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-num">02</span>
+                            <span class="card-badge completed">Completed</span>
+                        </div>
+                        <p class="card-category">Research Assistant</p>
+                        <h3 class="card-title">Nanoparticle Indentation Research</h3>
+                        <p class="card-desc">
+                            Molecular dynamics simulations using LAMMPS to study high-strain-rate aluminum nanoparticle collisions, determining optimal impact velocity for micro-cold spray applications. <strong>Work is published.</strong>
+                        </p>
+
+                        <div class="card-expandable" id="proj-2">
+                            <div class="card-details">
+                                <div class="detail-group">
+                                    <h4>What I Did</h4>
+                                    <ul>
+                                        <li>Ran LAMMPS simulations sweeping impact speeds from 1 to 1,000 m/s</li>
+                                        <li>Scripted collision dynamics, crystal lattice orientation, and timestep data collection</li>
+                                        <li>Visualized atomic deformation and dislocation patterns using OVITO</li>
+                                        <li>Generated force-depth curves and FCC/HCP/OTHER phase change graphs</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-group">
+                                    <h4>Publication</h4>
+                                    <p><em>Simulation of High Strain Rate Contact of Single Crystal Al Spheres</em></p>
+                                    <br>
+                                    <h4>Obstacle &amp; Solution</h4>
+                                    <p>Learned crystal material science terminology on the fly. Stayed curious, consistently asked questions, and used that growing knowledge to iteratively adjust simulation variables toward ideal deformation behavior.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span>LAMMPS</span><span>OVITO</span><span>Python</span><span>Materials Science</span><span>Data Analysis</span>
+                            </div>
+                            <button class="expand-btn" onclick="toggleExpand('proj-2', this)">Details &darr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 03 Hand-Tracking Plane -->
+                <article class="project-card reveal" data-accent="teal">
+                    <div class="card-accent-bar"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-num">03</span>
+                            <span class="card-badge completed">Completed</span>
+                        </div>
+                        <p class="card-category">Personal Project</p>
+                        <h3 class="card-title">Hand-Tracking RC Plane</h3>
+                        <p class="card-desc">
+                            A fully functional RC plane built from scratch, controlled entirely by hand gestures. A webcam tracks finger joints via Python and OpenCV, and transmits control packets over radio to an Arduino onboard the aircraft.
+                        </p>
+
+                        <div class="card-expandable" id="proj-3">
+                            <div class="card-details">
+                                <div class="detail-group">
+                                    <h4>What I Built</h4>
+                                    <ul>
+                                        <li>Foam board airframe with 3D-printed propellers (printed at UT Austin Makerspace)</li>
+                                        <li>Python/OpenCV hand-tracking using finger joint displacement as control input</li>
+                                        <li>Dual-Arduino radio system: ground transmitter sends packets to onboard receiver</li>
+                                        <li>Servo actuation for both direction control and throttle</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-group">
+                                    <h4>Obstacle &amp; Solution</h4>
+                                    <p>Finding the optimal motor power-to-propeller-to-aircraft-weight ratio was difficult through trial and error alone. Key takeaway: use aerodynamic lift calculations upfront rather than relying purely on iteration.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span>Python</span><span>OpenCV</span><span>Arduino</span><span>Radio TX/RX</span><span>3D Printing</span>
+                            </div>
+                            <button class="expand-btn" onclick="toggleExpand('proj-3', this)">Details &darr;</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 04 Battlebot -->
+                <article class="project-card reveal" data-accent="purple">
+                    <div class="card-accent-bar"></div>
+                    <div class="card-body">
+                        <div class="card-top">
+                            <span class="card-num">04</span>
+                            <span class="card-badge completed">Completed</span>
+                        </div>
+                        <p class="card-category">Team Competition</p>
+                        <h3 class="card-title">Battlebot</h3>
+                        <p class="card-desc">
+                            A combat robot designed to defeat opponents using rapid movement, a steel spinning weapon, and a hard 3D-printed PETG/TPU chassis — largely executed solo despite being a team project.
+                        </p>
+
+                        <div class="card-expandable" id="proj-4">
+                            <div class="card-details">
+                                <div class="detail-group">
+                                    <h4>What I Built</h4>
+                                    <ul>
+                                        <li>Full CAD design: weapon system, chassis with trusses and fillets, drivetrain, and electronics bay</li>
+                                        <li>3D-printed PETG/TPU chassis with ramped surface, bearing seats, and structural reinforcement</li>
+                                        <li>Electronics: LiPo battery, ESC, radio TX/RX, drive motors, dedicated weapon motor</li>
+                                        <li>Designed future iteration using a pulley-based drivetrain instead of direct drive</li>
+                                    </ul>
+                                </div>
+                                <div class="detail-group">
+                                    <h4>Obstacle &amp; Solution</h4>
+                                    <p>No prior battlebot experience, team conflicts left me working solo, and weight/size constraints took longer than expected. Key lesson: prototype earlier and explicitly budget time for setbacks and revisions.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <div class="card-tags">
+                                <span>SolidWorks</span><span>3D Printing</span><span>ESC</span><span>LiPo Systems</span><span>Radio TX/RX</span>
+                            </div>
+                            <button class="expand-btn" onclick="toggleExpand('proj-4', this)">Details &darr;</button>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ SKILLS ═══════════ -->
+    <section id="skills" class="section skills-section">
+        <div class="container">
+            <p class="section-label">// 03 &nbsp;skills</p>
+            <h2 class="section-title reveal">Tools &amp; Technologies</h2>
+
+            <div class="skills-layout">
+                <div class="skill-group reveal">
+                    <h3>Hardware &amp; Electronics</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">PCB Design</span>
+                        <span class="tag">KiCad</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Soldering &amp; SMD</span>
+                        <span class="tag">Bluetooth / Radio</span>
+                        <span class="tag">LiPo Battery Systems</span>
+                        <span class="tag">ESC</span>
+                        <span class="tag">Servo Control</span>
+                        <span class="tag">Embedded Systems</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h3>CAD &amp; Fabrication</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">Onshape</span>
+                        <span class="tag">SolidWorks</span>
+                        <span class="tag">3D Printing (FDM)</span>
+                        <span class="tag">PETG &amp; TPU</span>
+                        <span class="tag">Foam Board Fabrication</span>
+                        <span class="tag">Structural Analysis</span>
+                        <span class="tag">Design for Manufacturing</span>
+                    </div>
+                </div>
+                <div class="skill-group reveal">
+                    <h3>Software &amp; Simulation</h3>
+                    <div class="tag-cloud">
+                        <span class="tag">Python</span>
+                        <span class="tag">OpenCV</span>
+                        <span class="tag">LAMMPS</span>
+                        <span class="tag">OVITO</span>
+                        <span class="tag">Molecular Dynamics</span>
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">HTML / CSS / JS</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CONTACT ═══════════ -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <p class="section-label">// 04 &nbsp;contact</p>
+            <div class="contact-inner reveal">
+                <h2>Let's Build Something</h2>
+                <p>I'm actively seeking internships and engineering roles. Whether you want to discuss a project, an opportunity, or just geek out about hardware — I'm here for it.</p>
+                <div class="contact-options">
+                    <a href="mailto:tanisk74@gmail.com" class="contact-item">
+                        <span class="ci-icon">&#9993;</span>
+                        <div class="ci-text">
+                            <div class="ci-label">Email</div>
+                            <div class="ci-val">tanisk74@gmail.com</div>
+                        </div>
+                        <span class="ci-arrow">&rarr;</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener" class="contact-item">
+                        <span class="ci-icon ci-icon-li">in</span>
+                        <div class="ci-text">
+                            <div class="ci-label">LinkedIn</div>
+                            <div class="ci-val">tanish-kothapalle</div>
+                        </div>
+                        <span class="ci-arrow">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>Tanish Kothapalle &copy; 2025</span>
+            <span>Built with vanilla HTML, CSS &amp; JS</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-

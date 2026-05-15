@@ -1,10 +1,78 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact — Tanish Kothapalle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Contact page</h1>
+
+    <div id="scroll-progress"></div>
+
+    <nav id="nav">
+        <a href="index.html" class="nav-logo">TK</a>
+        <ul class="nav-links">
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact" class="nav-btn">Contact</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#skills">Skills</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <main class="contact-page">
+        <div class="container">
+            <p class="section-label">// contact</p>
+            <h1>Let's Connect</h1>
+            <p class="contact-page-sub">
+                I'm actively seeking internships and engineering roles. Whether you want to discuss a project, an opportunity, or just geek out about hardware &mdash; reach out.
+            </p>
+
+            <div class="contact-options">
+                <a href="mailto:tanisk74@gmail.com" class="contact-item">
+                    <span class="ci-icon">&#9993;</span>
+                    <div class="ci-text">
+                        <div class="ci-label">Email</div>
+                        <div class="ci-val">tanisk74@gmail.com</div>
+                    </div>
+                    <span class="ci-arrow">&rarr;</span>
+                </a>
+                <a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener" class="contact-item">
+                    <span class="ci-icon ci-icon-li">in</span>
+                    <div class="ci-text">
+                        <div class="ci-label">LinkedIn</div>
+                        <div class="ci-val">tanish-kothapalle</div>
+                    </div>
+                    <span class="ci-arrow">&rarr;</span>
+                </a>
+            </div>
+
+            <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <span>Tanish Kothapalle &copy; 2025</span>
+            <span>Built with vanilla HTML, CSS &amp; JS</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
