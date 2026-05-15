@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -57,7 +57,7 @@
                     </div>
                     <h2 class="proj-title">Nanoparticle Indentation</h2>
                     <p class="proj-lead">
-                        Conducted molecular dynamics simulations using LAMMPS to study high-strain-rate collisions of single-crystal aluminum nanoparticles. The goal was to determine the optimal impact velocity for applications such as micro-cold spray — a technique for coating surfaces without heat.
+                        Molecular dynamics simulations of high-strain-rate collisions of single-crystal aluminum nanoparticles — to find the optimal impact velocity for micro-cold spray coating applications.
                     </p>
                     <div class="proj-tech-strip" style="--strip-color: var(--blue)">
                         <span>LAMMPS</span><span>OVITO</span><span>Python</span><span>Materials Science</span><span>Data Analysis</span>
@@ -74,36 +74,163 @@
                     <div class="pub-badge">Peer Reviewed</div>
                 </div>
 
-                <!-- Full-width: LAMMPS code -->
-                <div class="section-sub reveal">
-                    <h3 class="sub-title">Simulation Code</h3>
-                    <p class="sub-desc">Scripts controlled collision speed, crystal lattice orientation, indenter direction reversal, and data collection across thousands of timesteps.</p>
-                </div>
-                <div class="img-grid-1 reveal">
-                    <figure class="img-wrap img-wrap--code">
-                        <img src="images/nano-code.jpg" alt="LAMMPS simulation code showing collision parameters and data collection" loading="lazy">
-                        <figcaption>LAMMPS simulation script — variables for nanoparticle velocity, crystal orientation, and data dump parameters</figcaption>
-                    </figure>
+                <!-- Research stats -->
+                <div class="research-stats reveal">
+                    <div class="rs-stat">
+                        <div class="rs-val">9</div>
+                        <div class="rs-key">Impact Velocities</div>
+                    </div>
+                    <div class="rs-stat">
+                        <div class="rs-val">1–1k</div>
+                        <div class="rs-key">m/s Range</div>
+                    </div>
+                    <div class="rs-stat">
+                        <div class="rs-val">6 nm</div>
+                        <div class="rs-key">Particle Diameter</div>
+                    </div>
+                    <div class="rs-stat">
+                        <div class="rs-val">1</div>
+                        <div class="rs-key">Peer-Reviewed Paper</div>
+                    </div>
                 </div>
 
-                <!-- Data visualization -->
-                <div class="section-sub reveal">
-                    <h3 class="sub-title">Data Analysis &amp; Visualization</h3>
-                    <p class="sub-desc">Raw simulation output was processed into structural analysis and force-depth graphs. Crystal structure changes (FCC → HCP → amorphous) and impact force were plotted across a range of impact velocities from 1 m/s to 1,000 m/s.</p>
-                </div>
-                <div class="img-grid-3 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/nano-ovito.jpg" alt="OVITO visualization of aluminum nanoparticle crystal structure" loading="lazy">
-                        <figcaption>OVITO visualization — green (FCC), red (HCP), grey (amorphous/surface)</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/nano-atoms.jpg" alt="Graph of change in atom count vs displacement showing structural phase changes" loading="lazy">
-                        <figcaption>Change in atom count vs. displacement — tracks FCC-to-HCP-to-amorphous transitions</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/nano-force.jpg" alt="Force vs depth graph for varying impact speeds 1 to 1000 m/s" loading="lazy">
-                        <figcaption>Force vs. depth at 1–1,000 m/s — higher velocity dramatically increases peak force</figcaption>
-                    </figure>
+                <!-- Crystal lattice SVG illustration -->
+                <div class="proj-visual proj-visual--blue reveal">
+                    <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <defs>
+                            <pattern id="grid-b" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M40,0 L0,0 0,40" stroke="rgba(126,200,227,.05)" stroke-width=".5"/>
+                            </pattern>
+                            <filter id="glow-b" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                            <radialGradient id="sphere-grad" cx="40%" cy="35%">
+                                <stop offset="0%" stop-color="rgba(126,200,227,.5)"/>
+                                <stop offset="100%" stop-color="rgba(126,200,227,.08)"/>
+                            </radialGradient>
+                        </defs>
+                        <rect width="800" height="280" fill="url(#grid-b)"/>
+
+                        <!-- ── FCC CRYSTAL LATTICE (left) ── -->
+                        <!-- Label -->
+                        <text x="140" y="24" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(126,200,227,.45)" letter-spacing="2">FCC CRYSTAL LATTICE</text>
+                        <text x="140" y="38" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(126,200,227,.3)" letter-spacing="1">single crystal Al, 6 nm sphere</text>
+
+                        <!-- 3D cube projection of FCC unit cell -->
+                        <!-- Back face (dimmer) -->
+                        <rect x="66" y="72" width="60" height="60" stroke="rgba(126,200,227,.15)" stroke-width=".8" fill="none"/>
+                        <!-- Front face -->
+                        <rect x="90" y="96" width="60" height="60" stroke="rgba(126,200,227,.4)" stroke-width="1.2" fill="rgba(126,200,227,.02)"/>
+                        <!-- Connecting edges -->
+                        <line x1="66" y1="72" x2="90" y2="96" stroke="rgba(126,200,227,.2)" stroke-width=".8"/>
+                        <line x1="126" y1="72" x2="150" y2="96" stroke="rgba(126,200,227,.2)" stroke-width=".8"/>
+                        <line x1="66" y1="132" x2="90" y2="156" stroke="rgba(126,200,227,.2)" stroke-width=".8"/>
+                        <line x1="126" y1="132" x2="150" y2="156" stroke="rgba(126,200,227,.2)" stroke-width=".8"/>
+
+                        <!-- Corner atoms (front face) -->
+                        <circle cx="90" cy="96" r="6" fill="url(#sphere-grad)" stroke="#7ec8e3" stroke-width="1" filter="url(#glow-b)"/>
+                        <circle cx="150" cy="96" r="6" fill="url(#sphere-grad)" stroke="#7ec8e3" stroke-width="1" filter="url(#glow-b)"/>
+                        <circle cx="90" cy="156" r="6" fill="url(#sphere-grad)" stroke="#7ec8e3" stroke-width="1" filter="url(#glow-b)"/>
+                        <circle cx="150" cy="156" r="6" fill="url(#sphere-grad)" stroke="#7ec8e3" stroke-width="1" filter="url(#glow-b)"/>
+                        <!-- Face center atom (front) -->
+                        <circle cx="120" cy="126" r="7.5" fill="url(#sphere-grad)" stroke="#7ec8e3" stroke-width="1.2" filter="url(#glow-b)"/>
+
+                        <!-- Corner atoms (back face, dimmer) -->
+                        <circle cx="66" cy="72" r="5" fill="rgba(126,200,227,.15)" stroke="rgba(126,200,227,.35)" stroke-width=".8"/>
+                        <circle cx="126" cy="72" r="5" fill="rgba(126,200,227,.15)" stroke="rgba(126,200,227,.35)" stroke-width=".8"/>
+                        <circle cx="66" cy="132" r="5" fill="rgba(126,200,227,.15)" stroke="rgba(126,200,227,.35)" stroke-width=".8"/>
+                        <circle cx="126" cy="132" r="5" fill="rgba(126,200,227,.15)" stroke="rgba(126,200,227,.35)" stroke-width=".8"/>
+                        <!-- Back face centers -->
+                        <circle cx="96" cy="72" r="5.5" fill="rgba(126,200,227,.2)" stroke="rgba(126,200,227,.4)" stroke-width=".8"/>
+                        <circle cx="66" cy="102" r="5.5" fill="rgba(126,200,227,.2)" stroke="rgba(126,200,227,.4)" stroke-width=".8"/>
+                        <circle cx="126" cy="102" r="5.5" fill="rgba(126,200,227,.2)" stroke="rgba(126,200,227,.4)" stroke-width=".8"/>
+                        <circle cx="96" cy="132" r="5.5" fill="rgba(126,200,227,.2)" stroke="rgba(126,200,227,.4)" stroke-width=".8"/>
+
+                        <!-- FCC label -->
+                        <text x="120" y="178" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(126,200,227,.55)" letter-spacing="2">FCC</text>
+                        <!-- Phase legend (below lattice) -->
+                        <circle cx="66" cy="200" r="5" fill="rgba(126,200,227,.6)" stroke="#7ec8e3" stroke-width="1"/>
+                        <text x="78" y="204" font-family="monospace" font-size="7" fill="rgba(126,200,227,.55)">FCC (ordered)</text>
+                        <circle cx="66" cy="218" r="5" fill="rgba(163,255,78,.4)" stroke="#a3ff4e" stroke-width="1"/>
+                        <text x="78" y="222" font-family="monospace" font-size="7" fill="rgba(163,255,78,.55)">HCP (transitional)</text>
+                        <circle cx="66" cy="236" r="5" fill="rgba(100,100,100,.5)" stroke="#666" stroke-width="1"/>
+                        <text x="78" y="240" font-family="monospace" font-size="7" fill="rgba(200,200,200,.45)">Amorphous (deformed)</text>
+
+                        <!-- ── INDENTER + COLLISION (center) ── -->
+                        <text x="380" y="24" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(126,200,227,.45)" letter-spacing="2">HIGH-STRAIN-RATE COLLISION</text>
+
+                        <!-- Indenter (block) -->
+                        <rect x="336" y="40" width="88" height="28" rx="4" stroke="rgba(126,200,227,.5)" stroke-width="1.2" fill="rgba(126,200,227,.06)"/>
+                        <text x="380" y="58" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(126,200,227,.6)" letter-spacing="1">INDENTER</text>
+
+                        <!-- Velocity arrows (indenter moving down) -->
+                        <line x1="380" y1="70" x2="380" y2="108" stroke="rgba(126,200,227,.5)" stroke-width="1.5" stroke-dasharray="5 3">
+                            <animate attributeName="stroke-dashoffset" values="0;-16" dur="0.8s" repeatCount="indefinite"/>
+                        </line>
+                        <polygon points="374,108 386,108 380,118" fill="rgba(126,200,227,.6)"/>
+                        <!-- Velocity label -->
+                        <text x="396" y="96" font-family="monospace" font-size="7" fill="rgba(126,200,227,.4)">v = 1–1000 m/s</text>
+
+                        <!-- Nanoparticle sphere (being indented) -->
+                        <circle cx="380" cy="166" r="44" stroke="#7ec8e3" stroke-width="1.8" fill="rgba(126,200,227,.04)" filter="url(#glow-b)"/>
+                        <!-- Deformation zone (top of sphere) -->
+                        <path d="M346,140 Q362,120 380,122 Q398,120 414,140" stroke="rgba(126,200,227,.5)" stroke-width="1.2" fill="rgba(126,200,227,.08)"/>
+                        <!-- Internal lattice dots (visible structure) -->
+                        <circle cx="380" cy="166" r="4" fill="rgba(126,200,227,.5)" stroke="#7ec8e3" stroke-width="1" filter="url(#glow-b)"/>
+                        <circle cx="360" cy="160" r="3" fill="rgba(126,200,227,.35)" stroke="rgba(126,200,227,.6)" stroke-width=".8"/>
+                        <circle cx="400" cy="160" r="3" fill="rgba(126,200,227,.35)" stroke="rgba(126,200,227,.6)" stroke-width=".8"/>
+                        <circle cx="370" cy="180" r="3" fill="rgba(163,255,78,.35)" stroke="#a3ff4e" stroke-width=".8"/>
+                        <circle cx="390" cy="180" r="3" fill="rgba(163,255,78,.35)" stroke="#a3ff4e" stroke-width=".8"/>
+                        <circle cx="365" cy="150" r="3" fill="rgba(100,100,100,.5)" stroke="#666" stroke-width=".8"/>
+                        <circle cx="395" cy="150" r="3" fill="rgba(100,100,100,.5)" stroke="#666" stroke-width=".8"/>
+                        <!-- Diameter annotation -->
+                        <line x1="336" y1="210" x2="424" y2="210" stroke="rgba(126,200,227,.25)" stroke-width=".8"/>
+                        <line x1="336" y1="205" x2="336" y2="215" stroke="rgba(126,200,227,.25)" stroke-width=".8"/>
+                        <line x1="424" y1="205" x2="424" y2="215" stroke="rgba(126,200,227,.25)" stroke-width=".8"/>
+                        <text x="380" y="226" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(126,200,227,.4)">Ø 6 nm</text>
+
+                        <!-- ── FORCE-DEPTH CHART (right) ── -->
+                        <text x="620" y="24" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(126,200,227,.45)" letter-spacing="2">FORCE vs DEPTH</text>
+
+                        <!-- Chart axes -->
+                        <line x1="510" y1="240" x2="510" y2="52" stroke="rgba(126,200,227,.35)" stroke-width="1"/>
+                        <line x1="510" y1="240" x2="750" y2="240" stroke="rgba(126,200,227,.35)" stroke-width="1"/>
+                        <!-- Axis labels -->
+                        <text x="500" y="56" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(126,200,227,.4)" transform="rotate(-90,500,148)">Force (nN)</text>
+                        <text x="630" y="258" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(126,200,227,.4)">Depth (Å)</text>
+
+                        <!-- Tick marks -->
+                        <line x1="506" y1="200" x2="514" y2="200" stroke="rgba(126,200,227,.3)" stroke-width=".8"/>
+                        <line x1="506" y1="150" x2="514" y2="150" stroke="rgba(126,200,227,.3)" stroke-width=".8"/>
+                        <line x1="506" y1="100" x2="514" y2="100" stroke="rgba(126,200,227,.3)" stroke-width=".8"/>
+                        <text x="502" y="203" text-anchor="end" font-family="monospace" font-size="6" fill="rgba(126,200,227,.35)">50</text>
+                        <text x="502" y="153" text-anchor="end" font-family="monospace" font-size="6" fill="rgba(126,200,227,.35)">100</text>
+                        <text x="502" y="103" text-anchor="end" font-family="monospace" font-size="6" fill="rgba(126,200,227,.35)">150</text>
+
+                        <!-- Force curves for different velocities -->
+                        <!-- 1 m/s (low, barely rises) -->
+                        <path d="M510,240 C540,238 580,235 620,230 C660,228 700,226 740,224" stroke="rgba(126,200,227,.3)" stroke-width="1" stroke-dasharray="3 3"/>
+                        <text x="745" y="228" font-family="monospace" font-size="5.5" fill="rgba(126,200,227,.35)">1 m/s</text>
+                        <!-- 100 m/s (moderate) -->
+                        <path d="M510,240 C530,230 560,210 590,185 C620,160 660,148 700,145 C720,144 735,144 740,144" stroke="rgba(126,200,227,.55)" stroke-width="1.2"/>
+                        <text x="745" y="148" font-family="monospace" font-size="5.5" fill="rgba(126,200,227,.5)">100</text>
+                        <!-- 500 m/s (high) -->
+                        <path d="M510,240 C525,220 545,185 570,150 C595,115 625,90 660,80 C690,72 720,70 740,70" stroke="rgba(163,255,78,.55)" stroke-width="1.4"/>
+                        <text x="745" y="74" font-family="monospace" font-size="5.5" fill="rgba(163,255,78,.6)">500</text>
+                        <!-- 1000 m/s (highest) -->
+                        <path d="M510,240 C522,210 538,170 558,130 C578,90 605,65 640,56 C670,48 710,46 740,46" stroke="rgba(126,200,227,.85)" stroke-width="1.6" filter="url(#glow-b)"/>
+                        <text x="745" y="50" font-family="monospace" font-size="5.5" fill="#7ec8e3">1000</text>
+
+                        <!-- Grid lines -->
+                        <line x1="510" y1="200" x2="750" y2="200" stroke="rgba(126,200,227,.07)" stroke-width=".6"/>
+                        <line x1="510" y1="150" x2="750" y2="150" stroke="rgba(126,200,227,.07)" stroke-width=".6"/>
+                        <line x1="510" y1="100" x2="750" y2="100" stroke="rgba(126,200,227,.07)" stroke-width=".6"/>
+
+                        <!-- Annotation: optimal zone -->
+                        <rect x="580" y="142" width="80" height="18" rx="2" stroke="rgba(126,200,227,.25)" stroke-width=".8" stroke-dasharray="3 2" fill="rgba(126,200,227,.05)"/>
+                        <text x="620" y="154" text-anchor="middle" font-family="monospace" font-size="5.5" fill="rgba(126,200,227,.55)">optimal zone</text>
+                    </svg>
                 </div>
 
                 <!-- Methodology -->
@@ -114,17 +241,17 @@
                     <div class="method-step">
                         <div class="ms-num">01</div>
                         <h4>Setup</h4>
-                        <p>Defined nanoparticle parameters: FCC crystal lattice orientation, sphere diameter (6 nm), and indenter geometry in LAMMPS input scripts.</p>
+                        <p>Defined FCC crystal lattice, 6 nm sphere diameter, and indenter geometry in LAMMPS input scripts.</p>
                     </div>
                     <div class="method-step">
                         <div class="ms-num">02</div>
                         <h4>Simulation</h4>
-                        <p>Ran high-strain-rate collision simulations across 9 impact velocities. Collected force, displacement, and per-atom structural data at each timestep.</p>
+                        <p>Ran high-strain-rate collisions across 9 impact velocities (1–1,000 m/s), collecting force and per-atom structure data.</p>
                     </div>
                     <div class="method-step">
                         <div class="ms-num">03</div>
                         <h4>Analysis</h4>
-                        <p>Used OVITO to classify atom structure (FCC, HCP, other). Plotted force-depth curves and tracked dislocation nucleation and amorphization events.</p>
+                        <p>Used OVITO to classify atom structure (FCC, HCP, amorphous) and plotted force-depth curves across all velocities.</p>
                     </div>
                     <div class="method-step">
                         <div class="ms-num">04</div>
@@ -133,18 +260,18 @@
                     </div>
                 </div>
 
-                <!-- Obstacle / Solution -->
+                <!-- Challenges / Approach -->
                 <div class="proj-details reveal">
                     <div class="detail-col">
                         <h3>Challenges</h3>
                         <ul class="detail-list">
-                            <li>Determining which impact velocity range produced useful plastic deformation without full fragmentation</li>
+                            <li>Finding the velocity range that produces useful plastic deformation without full fragmentation</li>
                             <li>Learning crystal structure terminology — FCC, HCP, Burgers vectors, dislocation mechanics — with no prior background</li>
                         </ul>
                     </div>
                     <div class="detail-col">
                         <h3>Approach</h3>
-                        <p>Stayed intellectually curious and unafraid to ask questions, even "basic" ones. Continuously sought feedback, built domain knowledge iteratively, and used that understanding to tune simulation variables toward ideal deformation behavior.</p>
+                        <p>Stayed curious and unafraid to ask questions. Continuously sought feedback, built domain knowledge iteratively, and used that understanding to tune simulation variables toward ideal deformation behavior.</p>
                     </div>
                 </div>
 

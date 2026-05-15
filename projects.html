@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -40,7 +40,7 @@
         <div class="container">
             <p class="section-label">// engineering projects</p>
             <h1 class="page-title">What I've <span class="accent">Built</span></h1>
-            <p class="page-subtitle">Hardware, software, and everything in between — from concept to physical prototype.</p>
+            <p class="page-subtitle">Hardware, software, and everything in between — concept to physical prototype.</p>
         </div>
     </header>
 
@@ -59,36 +59,93 @@
                         <span class="badge ongoing">Ongoing</span>
                     </div>
                     <h2 class="proj-title">AR Speech-to-Text Glasses</h2>
-                    <p class="proj-lead">
-                        Designing glasses that display real-time subtitles on the lens — the device listens to nearby speech, sends audio via Bluetooth to a phone or laptop for STT processing, then receives and displays the transcribed text back on the lens.
-                    </p>
+                    <p class="proj-lead">Glasses that display real-time subtitles on the lens. Onboard mic captures speech → Bluetooth to phone for STT processing → transcribed text displayed back on lens.</p>
                     <div class="proj-tech-strip">
                         <span>KiCad</span><span>Onshape</span><span>PCB Design</span><span>Bluetooth</span><span>Embedded Systems</span>
                     </div>
                 </div>
 
-                <!-- Images row 1: CAD + PCB -->
-                <div class="img-grid-2 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/ar-cad.jpg" alt="CAD model of custom AR glasses frame with wire channels" loading="lazy">
-                        <figcaption>Custom glasses frame CAD (Onshape) — internal channels route 3 wires per side</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/ar-pcb.jpg" alt="Two custom hand-assembled PCBs for the AR glasses" loading="lazy">
-                        <figcaption>Two hand-assembled PCBs — power board (left) and processing/display board (right)</figcaption>
-                    </figure>
-                </div>
+                <!-- SVG Illustration -->
+                <div class="proj-visual proj-visual--green reveal">
+                    <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <defs>
+                            <pattern id="grid-g" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M40,0 L0,0 0,40" stroke="rgba(163,255,78,.05)" stroke-width=".5"/>
+                            </pattern>
+                            <filter id="glow-g" x="-20%" y="-20%" width="140%" height="140%">
+                                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="800" height="280" fill="url(#grid-g)"/>
 
-                <!-- Images row 2: KiCad schematics + layout -->
-                <div class="img-grid-2 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/ar-schematic.jpg" alt="KiCad PCB schematic for AR glasses" loading="lazy">
-                        <figcaption>KiCad schematics — full board layout designed in approximately 2 months</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/ar-layout.jpg" alt="KiCad PCB layout top view" loading="lazy">
-                        <figcaption>KiCad PCB layout — modified from open-source smart glasses reference design</figcaption>
-                    </figure>
+                        <!-- Left temple arm -->
+                        <line x1="30" y1="140" x2="115" y2="140" stroke="rgba(163,255,78,.4)" stroke-width="2.5"/>
+
+                        <!-- LEFT LENS -->
+                        <rect x="115" y="88" width="188" height="104" rx="18" stroke="#a3ff4e" stroke-width="2" fill="rgba(163,255,78,.025)" filter="url(#glow-g)"/>
+                        <!-- Screen inside left lens -->
+                        <rect x="130" y="101" width="158" height="78" rx="4" stroke="rgba(163,255,78,.35)" stroke-width="1" fill="rgba(163,255,78,.04)"/>
+                        <text x="209" y="132" text-anchor="middle" font-family="monospace" font-size="9" fill="#a3ff4e" letter-spacing="1">STT ACTIVE</text>
+                        <text x="209" y="150" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(163,255,78,.55)">"meeting at 3pm..."</text>
+                        <text x="209" y="166" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(163,255,78,.35)">[live captions]</text>
+                        <!-- Blinking cursor -->
+                        <rect x="284" y="144" width="1.5" height="10" fill="#a3ff4e">
+                            <animate attributeName="opacity" values="1;0;1" dur=".85s" repeatCount="indefinite"/>
+                        </rect>
+
+                        <!-- BRIDGE -->
+                        <rect x="303" y="128" width="46" height="24" rx="5" stroke="rgba(163,255,78,.3)" stroke-width="1" fill="rgba(163,255,78,.02)"/>
+
+                        <!-- RIGHT LENS -->
+                        <rect x="349" y="88" width="188" height="104" rx="18" stroke="rgba(163,255,78,.65)" stroke-width="2" fill="rgba(163,255,78,.015)"/>
+                        <!-- PCB chip in right lens -->
+                        <rect x="375" y="108" width="105" height="64" rx="3" stroke="rgba(163,255,78,.45)" stroke-width="1" fill="rgba(163,255,78,.06)"/>
+                        <line x1="397" y1="122" x2="460" y2="122" stroke="rgba(163,255,78,.35)" stroke-width=".8"/>
+                        <line x1="397" y1="140" x2="455" y2="140" stroke="rgba(163,255,78,.35)" stroke-width=".8"/>
+                        <line x1="397" y1="158" x2="460" y2="158" stroke="rgba(163,255,78,.35)" stroke-width=".8"/>
+                        <line x1="445" y1="122" x2="445" y2="158" stroke="rgba(163,255,78,.35)" stroke-width=".8"/>
+                        <!-- SMD pads -->
+                        <rect x="393" y="118" width="7" height="7" rx="1" fill="rgba(163,255,78,.35)" stroke="rgba(163,255,78,.6)" stroke-width=".6"/>
+                        <rect x="393" y="136" width="7" height="7" rx="1" fill="rgba(163,255,78,.35)" stroke="rgba(163,255,78,.6)" stroke-width=".6"/>
+                        <rect x="393" y="154" width="7" height="7" rx="1" fill="rgba(163,255,78,.35)" stroke="rgba(163,255,78,.6)" stroke-width=".6"/>
+                        <!-- IC chip -->
+                        <rect x="452" y="114" width="22" height="52" rx="2" fill="rgba(163,255,78,.08)" stroke="rgba(163,255,78,.5)" stroke-width=".8"/>
+                        <text x="463" y="143" text-anchor="middle" font-family="monospace" font-size="5.5" fill="rgba(163,255,78,.6)" transform="rotate(-90,463,143)">ESP32</text>
+
+                        <!-- BT pulses near bridge -->
+                        <circle cx="326" cy="210" r="16" stroke="rgba(163,255,78,.3)" stroke-width="1" stroke-dasharray="3 4">
+                            <animate attributeName="r" values="12;20;12" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values=".5;.1;.5" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="326" cy="210" r="6" stroke="rgba(163,255,78,.6)" stroke-width="1">
+                            <animate attributeName="r" values="4;10;4" dur="2s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values=".9;.2;.9" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <text x="326" y="214" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(163,255,78,.7)">BT</text>
+
+                        <!-- Right temple + power PCB -->
+                        <line x1="537" y1="140" x2="610" y2="140" stroke="rgba(163,255,78,.4)" stroke-width="2.5"/>
+                        <rect x="610" y="112" width="112" height="56" rx="5" fill="rgba(163,255,78,.03)" stroke="rgba(163,255,78,.45)" stroke-width="1.2"/>
+                        <line x1="630" y1="128" x2="702" y2="128" stroke="rgba(163,255,78,.3)" stroke-width=".8"/>
+                        <line x1="630" y1="140" x2="696" y2="140" stroke="rgba(163,255,78,.3)" stroke-width=".8"/>
+                        <line x1="630" y1="152" x2="702" y2="152" stroke="rgba(163,255,78,.3)" stroke-width=".8"/>
+                        <rect x="626" y="124" width="6" height="6" rx="1" fill="rgba(163,255,78,.3)" stroke="rgba(163,255,78,.5)" stroke-width=".5"/>
+                        <rect x="626" y="136" width="6" height="6" rx="1" fill="rgba(163,255,78,.3)" stroke="rgba(163,255,78,.5)" stroke-width=".5"/>
+                        <rect x="626" y="148" width="6" height="6" rx="1" fill="rgba(163,255,78,.3)" stroke="rgba(163,255,78,.5)" stroke-width=".5"/>
+                        <text x="666" y="145" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(163,255,78,.5)" letter-spacing="1">PWR</text>
+
+                        <!-- Animated data packet: display → BT → power board -->
+                        <circle r="3" fill="#a3ff4e" filter="url(#glow-g)">
+                            <animateMotion dur="2.2s" repeatCount="indefinite" calcMode="linear" path="M209,140 L326,210 L666,140"/>
+                            <animate attributeName="opacity" values="0;1;1;1;0" dur="2.2s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- Labels -->
+                        <text x="209" y="75" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(163,255,78,.3)" letter-spacing="2">MICRO DISPLAY</text>
+                        <text x="443" y="75" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(163,255,78,.3)" letter-spacing="2">PROCESSING PCB</text>
+                        <text x="666" y="100" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(163,255,78,.3)" letter-spacing="2">POWER PCB</text>
+                    </svg>
                 </div>
 
                 <!-- Details -->
@@ -96,17 +153,15 @@
                     <div class="detail-col">
                         <h3>What I Built</h3>
                         <ul class="detail-list">
-                            <li>Custom CAD glasses frame with internal wire channels designed in Onshape</li>
-                            <li>Two custom PCBs hand-assembled at the UT Austin Makerspace: a power board and a processing/display board</li>
-                            <li>Complete KiCad schematics and PCB layout — full design completed in ~2 months</li>
-                            <li>Modified an open-source smart glasses firmware model to fit specific hardware requirements</li>
+                            <li>Custom CAD glasses frame (Onshape) with internal wire channels</li>
+                            <li>Two hand-assembled PCBs: power board and processing/display board</li>
+                            <li>Full KiCad schematics + PCB layout completed in ~2 months</li>
+                            <li>Modified open-source smart glasses firmware to fit custom hardware</li>
                         </ul>
                     </div>
                     <div class="detail-col">
-                        <h3>Obstacle</h3>
-                        <p>Unable to achieve consistent power delivery through the original monolithic PCB design.</p>
-                        <h3 style="margin-top:1.25rem">Solution</h3>
-                        <p>Split the large PCB into multiple smaller, purpose-built boards for easier troubleshooting and probing. New prototypes have resolved several power issues — development is ongoing.</p>
+                        <h3>Obstacle → Solution</h3>
+                        <p>Original monolithic PCB couldn't deliver consistent power. Split into two purpose-built boards for easier troubleshooting — several power issues since resolved. Development ongoing.</p>
                     </div>
                 </div>
 
@@ -128,36 +183,141 @@
                         <span class="badge completed">Completed</span>
                     </div>
                     <h2 class="proj-title">Hand-Tracking RC Plane</h2>
-                    <p class="proj-lead">
-                        A fully functional RC plane constructed from scratch and controlled entirely by hand gestures — a PC webcam tracks finger joints via Python and OpenCV, translating hand movement into servo commands transmitted by radio to an Arduino onboard the aircraft.
-                    </p>
+                    <p class="proj-lead">A fully built RC plane controlled by hand gestures — a webcam tracks finger joints via Python/OpenCV, translating movement into servo commands sent by radio to an Arduino onboard the aircraft.</p>
                     <div class="proj-tech-strip">
                         <span>Python</span><span>OpenCV</span><span>Arduino</span><span>Radio TX/RX</span><span>3D Printing</span><span>Foam Board</span>
                     </div>
                 </div>
 
-                <!-- Images row 1: propellers + plane body -->
-                <div class="img-grid-2 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/plane-props.jpg" alt="3D printed propellers for the RC plane" loading="lazy">
-                        <figcaption>3D-printed propellers — printed at the UT Austin Makerspace</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/plane-body.jpg" alt="Foam board RC plane airframe model" loading="lazy">
-                        <figcaption>Foam board airframe — cut and assembled by hand</figcaption>
-                    </figure>
-                </div>
+                <!-- SVG Illustration -->
+                <div class="proj-visual proj-visual--teal reveal">
+                    <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <defs>
+                            <pattern id="grid-t" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M40,0 L0,0 0,40" stroke="rgba(62,207,176,.05)" stroke-width=".5"/>
+                            </pattern>
+                            <filter id="glow-t" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="2.5" result="b"/>
+                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="800" height="280" fill="url(#grid-t)"/>
 
-                <!-- Images row 2: OpenCV + Arduino -->
-                <div class="img-grid-2 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/plane-opencv.jpg" alt="Python OpenCV hand joint tracking screenshot" loading="lazy">
-                        <figcaption>Python/OpenCV tracking finger joints in real-time — joint displacement maps to throttle and direction</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/plane-arduino.jpg" alt="Arduino board used as radio transmitter" loading="lazy">
-                        <figcaption>Arduino radio transmitter — encodes control packets sent to onboard Arduino receiver</figcaption>
-                    </figure>
+                        <!-- OpenCV frame border -->
+                        <rect x="18" y="18" width="210" height="244" rx="4" stroke="rgba(62,207,176,.22)" stroke-width="1" stroke-dasharray="5 4"/>
+                        <text x="28" y="33" font-family="monospace" font-size="7" fill="rgba(62,207,176,.4)" letter-spacing="1">OPENCV</text>
+                        <!-- Corner markers -->
+                        <path d="M18,38 L18,18 L38,18" stroke="rgba(62,207,176,.5)" stroke-width="1.2" fill="none"/>
+                        <path d="M208,18 L228,18 L228,38" stroke="rgba(62,207,176,.5)" stroke-width="1.2" fill="none"/>
+                        <path d="M228,242 L228,262 L208,262" stroke="rgba(62,207,176,.5)" stroke-width="1.2" fill="none"/>
+                        <path d="M38,262 L18,262 L18,242" stroke="rgba(62,207,176,.5)" stroke-width="1.2" fill="none"/>
+
+                        <!-- HAND SKELETON (21-point style, MediaPipe-like) -->
+                        <!-- Palm -->
+                        <ellipse cx="122" cy="200" rx="38" ry="32" stroke="rgba(62,207,176,.25)" stroke-width="1.2" fill="rgba(62,207,176,.03)"/>
+                        <!-- Wrist -->
+                        <circle cx="122" cy="232" r="4" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <line x1="122" y1="228" x2="122" y2="268" stroke="rgba(62,207,176,.35)" stroke-width="1.5"/>
+
+                        <!-- Thumb -->
+                        <line x1="88" y1="213" x2="70" y2="198" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="70" y1="198" x2="55" y2="184" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <circle cx="88" cy="213" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="70" cy="198" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="55" cy="184" r="4" fill="#3ecfb0" filter="url(#glow-t)"/>
+
+                        <!-- Index -->
+                        <line x1="104" y1="170" x2="97" y2="140" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="97" y1="140" x2="91" y2="112" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="91" y1="112" x2="86" y2="85" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <circle cx="104" cy="170" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="97" cy="140" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="91" cy="112" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="86" cy="85" r="4" fill="#3ecfb0" filter="url(#glow-t)"/>
+
+                        <!-- Middle -->
+                        <line x1="122" y1="168" x2="122" y2="136" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="122" y1="136" x2="122" y2="106" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="122" y1="106" x2="122" y2="76" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <circle cx="122" cy="168" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="122" cy="136" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="122" cy="106" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="122" cy="76" r="4" fill="#3ecfb0" filter="url(#glow-t)"/>
+
+                        <!-- Ring -->
+                        <line x1="140" y1="170" x2="146" y2="140" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="146" y1="140" x2="150" y2="112" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="150" y1="112" x2="153" y2="84" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <circle cx="140" cy="170" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="146" cy="140" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="150" cy="112" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="153" cy="84" r="4" fill="#3ecfb0" filter="url(#glow-t)"/>
+
+                        <!-- Pinky -->
+                        <line x1="156" y1="178" x2="168" y2="152" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="168" y1="152" x2="175" y2="128" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <line x1="175" y1="128" x2="180" y2="106" stroke="rgba(62,207,176,.45)" stroke-width="1.5"/>
+                        <circle cx="156" cy="178" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="168" cy="152" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="175" cy="128" r="3.5" fill="rgba(62,207,176,.25)" stroke="#3ecfb0" stroke-width="1"/>
+                        <circle cx="180" cy="106" r="4" fill="#3ecfb0" filter="url(#glow-t)"/>
+
+                        <!-- ── ARDUINO TX (center) ── -->
+                        <rect x="284" y="116" width="72" height="48" rx="6" stroke="rgba(62,207,176,.5)" stroke-width="1.2" fill="rgba(62,207,176,.05)"/>
+                        <text x="320" y="135" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(62,207,176,.7)" letter-spacing="1">ARDUINO</text>
+                        <text x="320" y="152" text-anchor="middle" font-family="monospace" font-size="8" fill="#3ecfb0" letter-spacing="2">TX</text>
+                        <!-- Antenna -->
+                        <line x1="320" y1="116" x2="320" y2="88" stroke="rgba(62,207,176,.4)" stroke-width="1.2"/>
+                        <circle cx="320" cy="84" r="3" fill="rgba(62,207,176,.6)" stroke="#3ecfb0" stroke-width="1"/>
+
+                        <!-- Radio waves (right-going) -->
+                        <path d="M360,140 Q380,118 400,140 Q420,162 440,140" stroke="rgba(62,207,176,.4)" stroke-width="1.2" stroke-dasharray="5 4">
+                            <animate attributeName="opacity" values=".2;.8;.2" dur="1.4s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M365,140 Q395,110 425,140 Q455,170 485,140" stroke="rgba(62,207,176,.28)" stroke-width="1" stroke-dasharray="5 4">
+                            <animate attributeName="opacity" values=".1;.6;.1" dur="1.4s" begin=".25s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M370,140 Q410,102 450,140 Q490,178 530,140" stroke="rgba(62,207,176,.16)" stroke-width=".8" stroke-dasharray="5 4">
+                            <animate attributeName="opacity" values=".05;.4;.05" dur="1.4s" begin=".5s" repeatCount="indefinite"/>
+                        </path>
+
+                        <!-- Animated packet: hand → TX → plane -->
+                        <circle r="3" fill="#3ecfb0" filter="url(#glow-t)">
+                            <animateMotion dur="2s" repeatCount="indefinite" path="M228,140 L284,140 L538,140 L630,140"/>
+                            <animate attributeName="opacity" values="0;1;1;1;0" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+
+                        <!-- ── PLANE TOP-DOWN (right side) ── -->
+                        <!-- Fuselage -->
+                        <ellipse cx="640" cy="140" rx="18" ry="78" stroke="#3ecfb0" stroke-width="2" fill="rgba(62,207,176,.04)" filter="url(#glow-t)"/>
+                        <!-- Wings -->
+                        <ellipse cx="640" cy="145" rx="85" ry="16" stroke="#3ecfb0" stroke-width="1.5" fill="rgba(62,207,176,.05)"/>
+                        <!-- Tail fin -->
+                        <ellipse cx="640" cy="208" rx="36" ry="8" stroke="rgba(62,207,176,.6)" stroke-width="1.2" fill="rgba(62,207,176,.03)"/>
+                        <!-- Nose tip -->
+                        <ellipse cx="640" cy="68" rx="9" ry="4" stroke="rgba(62,207,176,.45)" stroke-width="1" fill="rgba(62,207,176,.08)"/>
+
+                        <!-- Propeller (spinning) -->
+                        <line x1="622" y1="66" x2="658" y2="66" stroke="#3ecfb0" stroke-width="3" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" from="0 640 66" to="360 640 66" dur=".35s" repeatCount="indefinite"/>
+                        </line>
+                        <line x1="640" y1="48" x2="640" y2="84" stroke="#3ecfb0" stroke-width="3" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" from="0 640 66" to="360 640 66" dur=".35s" repeatCount="indefinite"/>
+                        </line>
+
+                        <!-- Onboard Arduino RX -->
+                        <rect x="630" y="134" width="20" height="12" rx="2" stroke="rgba(62,207,176,.45)" stroke-width=".8" fill="rgba(62,207,176,.1)"/>
+                        <text x="640" y="143" text-anchor="middle" font-family="monospace" font-size="5" fill="rgba(62,207,176,.7)">RX</text>
+
+                        <!-- Servo callouts on wings -->
+                        <rect x="560" y="139" width="10" height="7" rx="1" stroke="rgba(62,207,176,.35)" stroke-width=".8" fill="rgba(62,207,176,.04)"/>
+                        <rect x="710" y="139" width="10" height="7" rx="1" stroke="rgba(62,207,176,.35)" stroke-width=".8" fill="rgba(62,207,176,.04)"/>
+
+                        <!-- Bottom labels -->
+                        <text x="122" y="272" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(62,207,176,.35)" letter-spacing="1.5">GESTURE INPUT</text>
+                        <text x="320" y="195" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(62,207,176,.35)" letter-spacing="1.5">RADIO TX</text>
+                        <text x="640" y="272" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(62,207,176,.35)" letter-spacing="1.5">FOAM BOARD RC PLANE</text>
+                    </svg>
                 </div>
 
                 <!-- Details -->
@@ -166,16 +326,14 @@
                         <h3>What I Built</h3>
                         <ul class="detail-list">
                             <li>Foam board airframe with hand-cut wings, fuselage, and control surfaces</li>
-                            <li>3D-printed propellers printed at UT Austin's Makerspace</li>
-                            <li>Python/OpenCV hand-tracking: finger joint positions map to speed and direction inputs</li>
-                            <li>Dual-Arduino radio system — ground transmitter parses Python output and sends packets to onboard receiver controlling servos</li>
+                            <li>3D-printed propellers (UT Austin Makerspace)</li>
+                            <li>Python/OpenCV hand-tracking: finger position maps to throttle and direction</li>
+                            <li>Dual-Arduino radio system — ground TX parses OpenCV output, onboard RX drives servos</li>
                         </ul>
                     </div>
                     <div class="detail-col">
-                        <h3>Obstacle</h3>
-                        <p>Finding the optimal motor power-to-propeller-size-to-aircraft-weight ratio through trial and error was inefficient and time-consuming.</p>
-                        <h3 style="margin-top:1.25rem">Solution / Lesson Learned</h3>
-                        <p>While the plane ultimately flew, the key takeaway was to use aerodynamic lift calculations upfront rather than relying purely on physical iteration — saves time and material.</p>
+                        <h3>Lesson Learned</h3>
+                        <p>The plane flew — but the motor/propeller/weight ratio was found through trial and error. Key takeaway: use aerodynamic lift calculations upfront rather than physical iteration. Saves time and material.</p>
                     </div>
                 </div>
 
@@ -197,36 +355,102 @@
                         <span class="badge completed">Completed</span>
                     </div>
                     <h2 class="proj-title">Battlebot</h2>
-                    <p class="proj-lead">
-                        A combat robot built to destroy opponents using rapid movement, a steel spinning weapon, and a hard 3D-printed PETG/TPU chassis — designed in SolidWorks and largely executed solo despite being a team project.
-                    </p>
+                    <p class="proj-lead">A combat robot with a steel spinning weapon and hard PETG/TPU chassis — designed in SolidWorks and largely executed solo despite being a team project.</p>
                     <div class="proj-tech-strip">
                         <span>SolidWorks</span><span>3D Printing</span><span>PETG / TPU</span><span>ESC</span><span>LiPo Systems</span><span>Radio TX/RX</span>
                     </div>
                 </div>
 
-                <!-- Images row 1: Full CAD + Drivetrain CAD -->
-                <div class="img-grid-2 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/bot-cad.jpg" alt="Full battlebot CAD assembly in SolidWorks" loading="lazy">
-                        <figcaption>Full CAD assembly — weapon system, PETG/TPU chassis, drivetrain, and electronics bay</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/bot-wheel.jpg" alt="Battlebot drivetrain wheel CAD" loading="lazy">
-                        <figcaption>Drivetrain CAD — future iteration will replace direct motor-to-hub with a pulley system</figcaption>
-                    </figure>
-                </div>
+                <!-- SVG Illustration -->
+                <div class="proj-visual proj-visual--purple reveal">
+                    <svg viewBox="0 0 800 280" xmlns="http://www.w3.org/2000/svg" fill="none">
+                        <defs>
+                            <pattern id="grid-p" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                                <path d="M40,0 L0,0 0,40" stroke="rgba(184,164,245,.05)" stroke-width=".5"/>
+                            </pattern>
+                            <filter id="glow-p" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="3" result="b"/>
+                                <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                            </filter>
+                        </defs>
+                        <rect width="800" height="280" fill="url(#grid-p)"/>
 
-                <!-- Images row 2: Electronics + Chassis -->
-                <div class="img-grid-2 reveal">
-                    <figure class="img-wrap">
-                        <img src="images/bot-electronics.jpg" alt="Battlebot electronics wiring — LiPo, ESC, radio, motors" loading="lazy">
-                        <figcaption>Electronics layout — LiPo battery, ESC, radio transmitter, drive motors, and weapon motor</figcaption>
-                    </figure>
-                    <figure class="img-wrap">
-                        <img src="images/bot-chassis.jpg" alt="Partially assembled 3D printed battlebot chassis" loading="lazy">
-                        <figcaption>Partially assembled chassis — designed with ramped surface, trusses, fillets, and bearing seats</figcaption>
-                    </figure>
+                        <!-- ── SPINNING WEAPON DISC (top center) ── -->
+                        <circle cx="380" cy="52" r="30" stroke="#b8a4f5" stroke-width="1.8" fill="rgba(184,164,245,.05)" filter="url(#glow-p)">
+                            <animateTransform attributeName="transform" type="rotate" from="0 380 52" to="360 380 52" dur=".55s" repeatCount="indefinite"/>
+                        </circle>
+                        <line x1="350" y1="52" x2="410" y2="52" stroke="#b8a4f5" stroke-width="4" stroke-linecap="round">
+                            <animateTransform attributeName="transform" type="rotate" from="0 380 52" to="360 380 52" dur=".55s" repeatCount="indefinite"/>
+                        </line>
+                        <!-- Weapon motor hub -->
+                        <circle cx="380" cy="52" r="7" stroke="rgba(184,164,245,.7)" stroke-width="1.2" fill="rgba(184,164,245,.2)"/>
+                        <!-- Weapon mount bar -->
+                        <rect x="340" y="70" width="80" height="18" rx="3" stroke="rgba(184,164,245,.35)" stroke-width="1" fill="rgba(184,164,245,.04)"/>
+                        <text x="380" y="83" text-anchor="middle" font-family="monospace" font-size="6" fill="rgba(184,164,245,.55)" letter-spacing="1">STEEL BLADE</text>
+
+                        <!-- ── MAIN CHASSIS ── -->
+                        <rect x="218" y="86" width="324" height="170" rx="14" stroke="#b8a4f5" stroke-width="2" fill="rgba(184,164,245,.03)" filter="url(#glow-p)"/>
+                        <!-- Ramped surface shading (front wedge) -->
+                        <path d="M218,86 L542,86 L542,155 C480,158 320,158 218,155 Z" stroke="rgba(184,164,245,.18)" stroke-width="1" fill="rgba(184,164,245,.03)"/>
+                        <!-- Structural cross trusses -->
+                        <line x1="250" y1="100" x2="510" y2="240" stroke="rgba(184,164,245,.06)" stroke-width="1"/>
+                        <line x1="510" y1="100" x2="250" y2="240" stroke="rgba(184,164,245,.06)" stroke-width="1"/>
+
+                        <!-- ── ELECTRONICS BAY ── -->
+                        <rect x="248" y="176" width="264" height="62" rx="6" stroke="rgba(184,164,245,.4)" stroke-width="1" fill="rgba(184,164,245,.06)"/>
+                        <!-- ESC -->
+                        <rect x="258" y="186" width="52" height="28" rx="2" stroke="rgba(184,164,245,.55)" stroke-width=".8" fill="rgba(184,164,245,.08)"/>
+                        <text x="284" y="203" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(184,164,245,.75)" letter-spacing="1">ESC</text>
+                        <!-- LiPo -->
+                        <rect x="318" y="186" width="68" height="28" rx="2" stroke="rgba(184,164,245,.55)" stroke-width=".8" fill="rgba(184,164,245,.08)"/>
+                        <text x="352" y="203" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(184,164,245,.75)" letter-spacing="1">LIPO</text>
+                        <!-- RX -->
+                        <rect x="394" y="186" width="50" height="28" rx="2" stroke="rgba(184,164,245,.55)" stroke-width=".8" fill="rgba(184,164,245,.08)"/>
+                        <text x="419" y="203" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(184,164,245,.75)" letter-spacing="1">RX</text>
+                        <!-- Weapon motor driver -->
+                        <rect x="452" y="186" width="48" height="28" rx="2" stroke="rgba(184,164,245,.45)" stroke-width=".8" fill="rgba(184,164,245,.06)"/>
+                        <text x="476" y="203" text-anchor="middle" font-family="monospace" font-size="5.5" fill="rgba(184,164,245,.55)" letter-spacing=".5">W.CTRL</text>
+
+                        <!-- ── DRIVE MOTORS (left) ── -->
+                        <rect x="178" y="108" width="40" height="20" rx="3" stroke="rgba(184,164,245,.5)" stroke-width="1" fill="rgba(184,164,245,.06)"/>
+                        <text x="198" y="121" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(184,164,245,.65)">MOT</text>
+                        <rect x="178" y="188" width="40" height="20" rx="3" stroke="rgba(184,164,245,.5)" stroke-width="1" fill="rgba(184,164,245,.06)"/>
+                        <text x="198" y="201" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(184,164,245,.65)">MOT</text>
+
+                        <!-- ── DRIVE MOTORS (right) ── -->
+                        <rect x="542" y="108" width="40" height="20" rx="3" stroke="rgba(184,164,245,.5)" stroke-width="1" fill="rgba(184,164,245,.06)"/>
+                        <text x="562" y="121" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(184,164,245,.65)">MOT</text>
+                        <rect x="542" y="188" width="40" height="20" rx="3" stroke="rgba(184,164,245,.5)" stroke-width="1" fill="rgba(184,164,245,.06)"/>
+                        <text x="562" y="201" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(184,164,245,.65)">MOT</text>
+
+                        <!-- ── WHEELS ── -->
+                        <ellipse cx="158" cy="118" rx="16" ry="24" stroke="rgba(184,164,245,.5)" stroke-width="1.3" fill="rgba(184,164,245,.03)"/>
+                        <ellipse cx="158" cy="198" rx="16" ry="24" stroke="rgba(184,164,245,.5)" stroke-width="1.3" fill="rgba(184,164,245,.03)"/>
+                        <ellipse cx="602" cy="118" rx="16" ry="24" stroke="rgba(184,164,245,.5)" stroke-width="1.3" fill="rgba(184,164,245,.03)"/>
+                        <ellipse cx="602" cy="198" rx="16" ry="24" stroke="rgba(184,164,245,.5)" stroke-width="1.3" fill="rgba(184,164,245,.03)"/>
+                        <!-- Wheel tread lines -->
+                        <ellipse cx="158" cy="118" rx="8" ry="16" stroke="rgba(184,164,245,.2)" stroke-width=".8"/>
+                        <ellipse cx="158" cy="198" rx="8" ry="16" stroke="rgba(184,164,245,.2)" stroke-width=".8"/>
+                        <ellipse cx="602" cy="118" rx="8" ry="16" stroke="rgba(184,164,245,.2)" stroke-width=".8"/>
+                        <ellipse cx="602" cy="198" rx="8" ry="16" stroke="rgba(184,164,245,.2)" stroke-width=".8"/>
+
+                        <!-- ── CALLOUT BOX (right) ── -->
+                        <rect x="660" y="88" width="110" height="84" rx="5" stroke="rgba(184,164,245,.25)" stroke-width="1" fill="rgba(184,164,245,.03)" stroke-dasharray="4 3"/>
+                        <text x="715" y="108" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(184,164,245,.45)" letter-spacing="1">MATERIAL</text>
+                        <text x="715" y="124" text-anchor="middle" font-family="monospace" font-size="8" fill="#b8a4f5" letter-spacing="1">PETG</text>
+                        <text x="715" y="140" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(184,164,245,.35)" letter-spacing="1">+ TPU</text>
+                        <text x="715" y="157" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(184,164,245,.35)" letter-spacing="1">3LB CLASS</text>
+                        <!-- Callout box 2 -->
+                        <rect x="660" y="184" width="110" height="60" rx="5" stroke="rgba(184,164,245,.25)" stroke-width="1" fill="rgba(184,164,245,.03)" stroke-dasharray="4 3"/>
+                        <text x="715" y="204" text-anchor="middle" font-family="monospace" font-size="7" fill="rgba(184,164,245,.45)" letter-spacing="1">CAD TOOL</text>
+                        <text x="715" y="222" text-anchor="middle" font-family="monospace" font-size="8" fill="#b8a4f5">SolidWorks</text>
+                        <text x="715" y="237" text-anchor="middle" font-family="monospace" font-size="6.5" fill="rgba(184,164,245,.35)">full assembly</text>
+
+                        <!-- Bottom label -->
+                        <text x="380" y="272" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(184,164,245,.35)" letter-spacing="2">TOP-DOWN SCHEMATIC — COMBAT ROBOT</text>
+                        <!-- Weapon label -->
+                        <text x="380" y="25" text-anchor="middle" font-family="monospace" font-size="7.5" fill="rgba(184,164,245,.45)" letter-spacing="2">SPINNING STEEL WEAPON</text>
+                    </svg>
                 </div>
 
                 <!-- Details -->
@@ -234,21 +458,21 @@
                     <div class="detail-col">
                         <h3>What I Built</h3>
                         <ul class="detail-list">
-                            <li>Full SolidWorks CAD assembly: weapon system, PETG/TPU chassis, drivetrain, electronics mounting</li>
-                            <li>3D-printed chassis featuring ramped surface, structural trusses, fillets, and bearing seats</li>
-                            <li>Electronics: LiPo battery, ESC, radio TX/RX, independent drive motors, weapon motor</li>
-                            <li>Iterated on drivetrain design — next version uses a pulley rather than direct motor-to-hub drive</li>
+                            <li>Full SolidWorks CAD: spinning weapon, PETG/TPU chassis, drivetrain, electronics bay</li>
+                            <li>3D-printed chassis with ramped surface, structural trusses, fillets, bearing seats</li>
+                            <li>Electronics: LiPo, ESC, radio TX/RX, independent drive motors, weapon motor</li>
+                            <li>Iterated on drivetrain — next version uses pulley rather than direct hub drive</li>
                         </ul>
                     </div>
                     <div class="detail-col">
                         <h3>Obstacles</h3>
                         <ul class="detail-list">
                             <li>No prior battlebot experience on the team</li>
-                            <li>Team conflicts left me as the sole contributor</li>
-                            <li>Designing to strict weight and size constraints took far longer than expected</li>
+                            <li>Team conflicts left me as primary contributor</li>
+                            <li>Strict weight and size constraints required many revision cycles</li>
                         </ul>
-                        <h3 style="margin-top:1.25rem">Solution</h3>
-                        <p>Create the prototype design much earlier in the timeline and build in explicit buffer for setbacks, revisions, and unexpected solo work.</p>
+                        <h3 style="margin-top:1.25rem">Lesson</h3>
+                        <p>Start the prototype much earlier and build in explicit buffer for revisions and unexpected solo work.</p>
                     </div>
                 </div>
 
