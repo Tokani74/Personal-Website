@@ -117,12 +117,12 @@ if (typedEl) {
     const ctx = canvas.getContext('2d');
 
     const PETAL_COLORS = [
-        [255, 179, 198],  // sakura pink
-        [196, 181, 253],  // lavender
-        [147, 197, 253],  // sky blue
-        [253, 236, 220],  // warm cream
-        [134, 239, 172],  // mint
-        [249, 199,  79],  // warm gold
+        [232, 100, 150],  // deep sakura pink
+        [156, 127, 208],  // deep lavender
+        [91,  163, 208],  // deep sky blue
+        [240, 130,  90],  // warm peach
+        [46,  175, 146],  // deep mint
+        [212, 160,  23],  // amber gold
     ];
 
     const NOTES = ['♩', '♪', '♫', '♬'];
@@ -142,7 +142,7 @@ if (typedEl) {
             angle:   Math.random() * Math.PI * 2,
             spin:    (Math.random() - 0.5) * 0.035,
             color:   color,
-            alpha:   0.14 + Math.random() * 0.32,
+            alpha:   0.35 + Math.random() * 0.42,
             phase:   Math.random() * Math.PI * 2,
             wave:    0.3 + Math.random() * 0.9,
         };
@@ -157,7 +157,7 @@ if (typedEl) {
             size:  10 + Math.random() * 9,
             speed: 0.28 + Math.random() * 0.45,
             drift: (Math.random() - 0.5) * 0.25,
-            alpha: 0.07 + Math.random() * 0.16,
+            alpha: 0.22 + Math.random() * 0.30,
             color: color,
             phase: Math.random() * Math.PI * 2,
         };
