@@ -1,17 +1,310 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tanish Kothapalle — Mechanical Engineer</title>
+    <meta name="description" content="Tanish Kothapalle — Mechanical Engineering student at UT Austin. Tool engineering, mechatronics, product development, and hands-on builds.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Tanish</h1>
-    <a href="/Personal-Website/contact.html">contact</a>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minima quisquam quibusdam nostrum asperiores doloremque. Provident voluptatem, officiis at error blanditiis, explicabo saepe ea earum unde laudantium excepturi soluta fugit molestias.</p>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="#top" class="nav-brand">Tanish<span>.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="top">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <span class="eyebrow">Mechanical Engineering · UT Austin</span>
+            <h1>Tanish Kothapalle builds things that have to <em>actually work.</em></h1>
+            <p class="hero-sub">
+                Tool engineering intern at Boeing, electromechanical lead at Amazon, and a maker who's as
+                comfortable in CAD as he is soldering a PCB. I turn ambitious ideas into working hardware.
+            </p>
+            <div class="hero-actions">
+                <a href="Resume_Tanish_Kothapalle.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Resume</a>
+                <a href="Engineering%20Portfolio.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Engineering Portfolio</a>
+                <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
+            </div>
+            <div class="hero-meta">
+                <div>
+                    <strong>3.7 / 4.0</strong>
+                    <span>GPA</span>
+                </div>
+                <div>
+                    <strong>2 Patents</strong>
+                    <span>Applied, at Boeing</span>
+                </div>
+                <div>
+                    <strong>$1.16M</strong>
+                    <span>Annual savings delivered</span>
+                </div>
+                <div>
+                    <strong>5</strong>
+                    <span>Fabrication disciplines</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="eyebrow">About</span>
+                <h2 class="section-heading">From the makerspace to the factory floor</h2>
+                <p>
+                    I'm a Mechanical Engineering student at the University of Texas at Austin, minoring in Sales
+                    and Marketing, graduating May 2027. My work spans precision tooling at Boeing, large-scale
+                    automation installs at Amazon, and running electronics education for thousands of students at
+                    UT's Texas Inventionworks makerspace.
+                </p>
+                <p>
+                    I like problems that force me to move between disciplines — CAD one day, PCB layout the next,
+                    then leading a team through a six-week deadline. Outside of work, I build personal hardware
+                    projects: AR glasses, hand-tracked RC planes, and combat robots.
+                </p>
+                <div class="quote">
+                    "Shoot for the moon. Even if you miss you'll land among the stars." — Norman Vincent Peale
+                </div>
+            </div>
+            <div class="about-card">
+                <h3>Quick Facts</h3>
+                <div class="fact-row"><span>Education</span><span>B.S. Mechanical Engineering, UT Austin</span></div>
+                <div class="fact-row"><span>Minor</span><span>Sales &amp; Marketing</span></div>
+                <div class="fact-row"><span>Graduation</span><span>May 2027</span></div>
+                <div class="fact-row"><span>GPA</span><span>3.7 / 4.0</span></div>
+                <div class="fact-row"><span>Based in</span><span>Austin, TX</span></div>
+                <h3 style="margin-top:24px;">Relevant Coursework</h3>
+                <div class="coursework">
+                    <span class="pill">Acoustics Engineering</span>
+                    <span class="pill">Dynamic System Controls</span>
+                    <span class="pill">Data Science</span>
+                    <span class="pill">Customer Marketing</span>
+                    <span class="pill">Mechatronics</span>
+                    <span class="pill">Differential Equations</span>
+                    <span class="pill">FIRE Research Program</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <span class="eyebrow">Experience</span>
+            <h2 class="section-heading">Where I've worked</h2>
+            <p class="section-intro">
+                Hands-on roles across aerospace tooling, warehouse automation, and campus leadership — plus a
+                published research project in high strain-rate materials science.
+            </p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Tool Engineering Intern</h3>
+                                <div class="timeline-org">Boeing</div>
+                            </div>
+                            <span class="timeline-date">05/2026 – 08/2026</span>
+                        </div>
+                        <ul>
+                            <li>Identified and addressed a $1.44 million problem in 737 wing inspection processes — the fix saves $1.16 million this year while improving inspection reliability.</li>
+                            <li>Designed an optical measuring device, from concept through approval, for 0.001" precision inspections — 2 patents applied.</li>
+                            <li>Designed, waterproof-tested, and approved a bearing seal for a mill fixture within the first 2 weeks.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Electromechanical Technician Lead</h3>
+                                <div class="timeline-org">Amazon / Ivy Technologies</div>
+                            </div>
+                            <span class="timeline-date">06/2025 – 07/2025</span>
+                        </div>
+                        <ul>
+                            <li>Led cross-functional teams of 7–10 technicians to complete a $25 million chute installation within a 6-week deadline, finishing ahead of schedule.</li>
+                            <li>Assembled 12 Cardinal robotic systems — Amazon's 300-lb autonomous robotic arms for package transfer.</li>
+                            <li>Handled mechanical assembly, electrical wiring, and final quality checks for 409 Proteus Cart Stations.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>HR Lead ← Electronics Lead ← Student Staff</h3>
+                                <div class="timeline-org">Texas Inventionworks, UT Austin</div>
+                            </div>
+                            <span class="timeline-date">01/2024 – Present</span>
+                        </div>
+                        <ul>
+                            <li>Hire and onboard 26 staff for UT Austin's largest makerspace (25,000 sqft).</li>
+                            <li>Teach manufacturing and engineering skills to 3,500+ students annually.</li>
+                            <li>Lead a team of 8 running electronic workshops, build nights, and trainings for 1,000+ students.</li>
+                            <li>Trained across 5 fabrication areas: FDM, laser cutting, soldering, woodworking, machining.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-card">
+                        <div class="timeline-head">
+                            <div>
+                                <h3>Research Assistant</h3>
+                                <div class="timeline-org">High Strain Rate Indentation on Nanoparticles</div>
+                            </div>
+                            <span class="timeline-date">08/2023 – 10/2024</span>
+                        </div>
+                        <ul>
+                            <li>Co-authored a published paper on velocity vs. deformation behavior of aluminum in micro-cold spray additive manufacturing.</li>
+                            <li>Ran LAMMPS simulations on LoneStar, then analyzed results with Ovito and Excel into publication-ready graphs.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <span class="eyebrow">Projects</span>
+            <h2 class="section-heading">Things I've built</h2>
+            <p class="section-intro">
+                A mix of personal builds and team competitions, pulled from my
+                <a href="Engineering%20Portfolio.pdf" target="_blank" rel="noopener" style="color: var(--green-300); font-weight: 600;">full engineering portfolio</a>.
+            </p>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-top">
+                        <h3>AR Speech-to-Text Glasses</h3>
+                        <span class="status-tag status-ongoing">Ongoing</span>
+                    </div>
+                    <p>
+                        Custom AR glasses that display live subtitles on the lens — audio is captured, sent via
+                        Bluetooth to a phone or laptop for processing, and the resulting text is streamed back to
+                        the glasses. Includes a custom-modeled frame and two hand-assembled PCBs (power, and
+                        processing/display) designed in KiCad.
+                    </p>
+                    <div class="project-note">
+                        <strong>Obstacle:</strong> Inconsistent power delivery through the PCB. Solved by splitting
+                        the board into smaller, simpler boards for easier troubleshooting.
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-top">
+                        <h3>Hand-Tracking RC Plane</h3>
+                        <span class="status-tag status-complete">Completed</span>
+                    </div>
+                    <p>
+                        An RC plane built from scratch and flown by tracking hand movements through a webcam.
+                        Python + OpenCV reads finger joint motion, an Arduino relays the commands over radio to a
+                        second Arduino onboard controlling the servos.
+                    </p>
+                    <div class="project-note">
+                        <strong>Obstacle:</strong> Dialing in motor/propeller/weight ratios by trial and error —
+                        next time, calculating lift up front instead.
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-top">
+                        <h3>Nanoparticle Indentation Research</h3>
+                        <span class="status-tag status-complete">Published</span>
+                    </div>
+                    <p>
+                        LAMMPS simulations of high strain-rate aluminum nanoparticle collisions to find optimal
+                        impact velocity for micro-cold spray applications. Visualized results in Ovito and built
+                        publication-ready graphs from the raw simulation data.
+                    </p>
+                    <div class="project-note">
+                        <strong>Publication:</strong> "Simulation of High Strain Rate Contact of Single Crystal Al Spheres"
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-top">
+                        <h3>Battlebot</h3>
+                        <span class="status-tag status-complete">Team Competition</span>
+                    </div>
+                    <p>
+                        A combat robot designed to destroy opponents with a steel spinning weapon and a hardened
+                        3D-printed chassis — ramped surfaces, trusses, fillets, and bearings included for
+                        durability. Took over sole ownership of design and build when the rest of the team dropped off.
+                    </p>
+                    <div class="project-note">
+                        <strong>Obstacle:</strong> No prior Battlebots experience on the team. Next time: build a
+                        prototype earlier and leave room for revisions.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <span class="eyebrow">Skills</span>
+            <h2 class="section-heading">What I bring to a team</h2>
+            <div class="skills-grid">
+                <div class="skills-card">
+                    <h3>Technical</h3>
+                    <div class="skills-tags">
+                        <span class="pill">Product Development</span>
+                        <span class="pill">Mechatronics</span>
+                        <span class="pill">CAD (Onshape, SolidWorks)</span>
+                        <span class="pill">PCB Design (KiCad)</span>
+                        <span class="pill">Python</span>
+                        <span class="pill">Manufacturing</span>
+                        <span class="pill">Content Creation</span>
+                    </div>
+                </div>
+                <div class="skills-card">
+                    <h3>Soft Skills</h3>
+                    <div class="skills-tags">
+                        <span class="pill">Leadership</span>
+                        <span class="pill">Project Management</span>
+                        <span class="pill">Quick Learner</span>
+                        <span class="pill">Critical Thinking</span>
+                        <span class="pill">Communication</span>
+                        <span class="pill">Inquisitive</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-cta">
+                <h2>Let's build something.</h2>
+                <p>Open to new grad roles and collaborations in mechanical engineering, product design, and mechatronics.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                    <a href="Resume_Tanish_Kothapalle.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; <span id="year"></span> Tanish Kothapalle · Built with HTML &amp; CSS ·
+            <a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
-

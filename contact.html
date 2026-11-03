@@ -1,10 +1,74 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact — Tanish Kothapalle</title>
+    <meta name="description" content="Get in touch with Tanish Kothapalle — Mechanical Engineering student at UT Austin.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Contact page</h1>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Tanish<span>.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="index.html#skills">Skills</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="container">
+            <span class="eyebrow">Get in touch</span>
+            <h1>Let's talk.</h1>
+            <p>Whether it's a role, a project, or just a question about one of the builds above — I'd love to hear from you.</p>
+
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="icon">&#9993;</div>
+                    <h3>Email</h3>
+                    <p>The fastest way to reach me</p>
+                    <a class="btn btn-ghost" href="mailto:tanisk74@gmail.com">tanisk74@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">in</div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect or see my full network</p>
+                    <a class="btn btn-ghost" href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener">View Profile</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">&#128196;</div>
+                    <h3>Resume</h3>
+                    <p>One-page overview of my experience</p>
+                    <a class="btn btn-ghost" href="Resume_Tanish_Kothapalle.pdf" target="_blank" rel="noopener">Download PDF</a>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">&#128295;</div>
+                    <h3>Portfolio</h3>
+                    <p>Deep dive into my engineering projects</p>
+                    <a class="btn btn-ghost" href="Engineering%20Portfolio.pdf" target="_blank" rel="noopener">View Portfolio</a>
+                </div>
+            </div>
+
+            <a href="index.html" class="back-home">&larr; Back to home</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; <span id="year"></span> Tanish Kothapalle
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
