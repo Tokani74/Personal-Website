@@ -233,6 +233,29 @@ section + section {
     width: 100%;
 }
 
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.hero-portrait {
+    justify-self: end;
+    width: 100%;
+    max-width: 340px;
+}
+
+.hero-portrait img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 2px solid rgba(146, 201, 164, 0.4);
+    box-shadow: var(--shadow), 0 0 0 6px rgba(7, 15, 28, 0.4);
+    filter: saturate(1.35) contrast(1.04);
+}
+
 .hero-content .eyebrow {
     color: var(--green-300);
 }
@@ -979,8 +1002,15 @@ footer.site-footer a {
     .about-grid,
     .project-grid,
     .skills-grid,
-    .explore-grid {
+    .explore-grid,
+    .hero-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-portrait {
+        justify-self: center;
+        max-width: 260px;
+        margin-top: 32px;
     }
 
     .nav-links {
