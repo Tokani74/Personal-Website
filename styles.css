@@ -497,6 +497,12 @@ section + section {
     border: 1px solid var(--border-soft);
 }
 
+.status-paused {
+    background: rgba(224, 178, 97, 0.12);
+    color: #e0b261;
+    border: 1px solid rgba(224, 178, 97, 0.3);
+}
+
 .project-card h3 {
     font-size: 1.2rem;
     color: var(--cream);
