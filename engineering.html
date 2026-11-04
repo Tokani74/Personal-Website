@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Projects — Tanish Kothapalle</title>
+    <meta name="description" content="Engineering projects by Tanish Kothapalle: AR smart glasses, a hand-tracked RC plane, nanoparticle indentation research, and a combat robot.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Tanish<span>.</span></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="game-dev.html">YouTube &amp; Game Dev</a>
+                <a href="contact.html" class="btn btn-primary">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <span class="eyebrow">Engineering</span>
+            <h1>Engineering Projects</h1>
+            <p>
+                Personal builds and team competitions spanning mechatronics, CAD, PCB design, and materials
+                research — pulled from my
+                <a href="Engineering%20Portfolio.pdf" target="_blank" rel="noopener" style="color: var(--green-300); font-weight: 600;">full engineering portfolio (PDF)</a>.
+            </p>
+        </div>
+    </header>
+
+    <section>
+        <div class="container project-detail">
+
+            <div class="project-detail-card">
+                <div class="project-detail-head">
+                    <h2>AR Speech-to-Text Glasses</h2>
+                    <span class="status-tag status-ongoing">Personal Project — Ongoing</span>
+                </div>
+                <p>
+                    Custom AR glasses that display live subtitles on the lens. Conversation audio is captured,
+                    sent via Bluetooth to a phone or laptop for processing, and the resulting text is streamed
+                    back to the glasses to display in real time.
+                </p>
+                <p>
+                    The frame was modeled from scratch with side panels and an internal channel to route three
+                    wires between the temples — designed in Onshape. The electronics are two hand-assembled PCBs
+                    built at UT Austin's makerspace: one for power, one for processing and display, both designed
+                    in KiCad over roughly two months, adapting an open-source smart glasses reference design.
+                </p>
+                <div class="img-gallery">
+                    <figure>
+                        <img src="images/ar-glasses-cad.jpg" alt="CAD model of the custom AR glasses frame" class="fit-contain">
+                        <figcaption>CAD model of the glasses frame (Onshape)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/ar-glasses-pcb.jpg" alt="Two hand-assembled PCBs for the AR glasses">
+                        <figcaption>Hand-assembled power and processing/display PCBs</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/ar-glasses-schematic.jpg" alt="KiCad schematic for the AR glasses processing board" class="fit-contain">
+                        <figcaption>KiCad schematic — processing &amp; display board</figcaption>
+                    </figure>
+                </div>
+                <div class="project-note">
+                    <strong>Obstacle:</strong> Inconsistent power delivery through the PCB. Solved by splitting
+                    the board into smaller, simpler boards for easier troubleshooting and probing — new
+                    prototypes have since resolved some of the power issues.
+                </div>
+            </div>
+
+            <div class="project-detail-card">
+                <div class="project-detail-head">
+                    <h2>Hand-Tracking RC Plane</h2>
+                    <span class="status-tag status-complete">Personal Project — Completed</span>
+                </div>
+                <p>
+                    An RC plane built from scratch and flown by tracking hand movements through a PC webcam.
+                    Python with OpenCV tracks the joints of my fingers, and the change in joint position controls
+                    speed and direction. An Arduino parses that data and sends radio packets to a second Arduino
+                    on the plane, which drives the servos.
+                </p>
+                <p>
+                    The body was cut from foam board, and the propellers were 3D printed at Texas Inventionworks,
+                    where I serve as Electronics Lead.
+                </p>
+                <div class="img-gallery">
+                    <figure>
+                        <img src="images/plane-body.jpg" alt="Foam board RC plane body" class="fit-contain">
+                        <figcaption>Foam board plane body</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/plane-propellers.jpg" alt="3D printed propellers for the RC plane" class="fit-contain">
+                        <figcaption>3D printed propellers</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/plane-code.jpg" alt="Python OpenCV hand-tracking code" class="fit-contain">
+                        <figcaption>Python + OpenCV hand-tracking</figcaption>
+                    </figure>
+                </div>
+                <div class="project-note">
+                    <strong>Obstacle:</strong> Finding the right motor power, propeller size, and aircraft weight
+                    ratio took a lot of trial and error. Next time: calculate lift up front instead of guessing.
+                </div>
+            </div>
+
+            <div class="project-detail-card">
+                <div class="project-detail-head">
+                    <h2>Nanoparticle Indentation Research</h2>
+                    <span class="status-tag status-complete">Research Assistant — Completed</span>
+                </div>
+                <p>
+                    Ran LAMMPS simulations of high strain-rate aluminum nanoparticle collisions to determine
+                    optimal impact velocity for applications like micro-cold spray additive manufacturing.
+                    Simulations ran on the LoneStar supercomputer; results were visualized in Ovito and
+                    consolidated into publication-ready graphs in Excel.
+                </p>
+                <div class="img-gallery">
+                    <figure>
+                        <img src="images/nanoparticle-sim.jpg" alt="Ovito visualization of nanoparticle indentation" class="fit-contain">
+                        <figcaption>Ovito visualization — dislocations &amp; amorphization</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/nanoparticle-graph.jpg" alt="Graph of atom structure change vs displacement" class="fit-contain">
+                        <figcaption>Change in atom structure vs. displacement</figcaption>
+                    </figure>
+                </div>
+                <div class="project-note">
+                    <strong>Publication:</strong> "Simulation of High Strain Rate Contact of Single Crystal Al Spheres"
+                </div>
+            </div>
+
+            <div class="project-detail-card">
+                <div class="project-detail-head">
+                    <h2>Battlebot</h2>
+                    <span class="status-tag status-complete">Team Competition — Completed</span>
+                </div>
+                <p>
+                    A combat robot built to destroy opponents with a steel spinning weapon and a hardened
+                    3D-printed chassis — ramped surfaces, trusses, fillets, and bearings for durability. The CAD
+                    incorporates the weapon, PTEG &amp; TPU chassis, drivetrain, and electronics; the electronics
+                    consist of a LiPo battery, ESC, radio transmitter, drive motors, and weapon motor.
+                </p>
+                <div class="img-gallery">
+                    <figure>
+                        <img src="images/battlebot-cad.jpg" alt="Full CAD design of the Battlebot" class="fit-contain">
+                        <figcaption>Full CAD design — weapon, chassis, drivetrain</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/battlebot-wheel.jpg" alt="Battlebot drivetrain wheel CAD" class="fit-contain">
+                        <figcaption>Drivetrain CAD</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/battlebot-electronics.jpg" alt="Battlebot electronic circuitry">
+                        <figcaption>Electronic circuitry — LiPo, ESC, radio, motors</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/battlebot-chassis.jpg" alt="Partially assembled 3D printed Battlebot chassis">
+                        <figcaption>Partially-assembled 3D printed chassis</figcaption>
+                    </figure>
+                </div>
+                <div class="project-note">
+                    <strong>Obstacle:</strong> No one on the team had prior Battlebots experience, and I ended up
+                    the sole person working on it. Next time: build a prototype much earlier and leave room for
+                    setbacks and revisions.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-cta">
+                <h2>Let's build something.</h2>
+                <p>Open to new grad roles and collaborations in mechanical engineering, product design, and mechatronics.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                    <a href="Resume_Tanish_Kothapalle.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; <span id="year"></span> Tanish Kothapalle · Built with HTML &amp; CSS ·
+            <a href="https://www.linkedin.com/in/tanish-kothapalle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

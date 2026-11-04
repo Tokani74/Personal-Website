@@ -559,6 +559,219 @@ section + section {
     background: rgba(146, 201, 164, 0.08);
 }
 
+/* ===== Explore cards (homepage section links) ===== */
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.explore-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    padding: 32px;
+    isolation: isolate;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.explore-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(146, 201, 164, 0.4);
+}
+
+.explore-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+}
+
+.explore-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(190deg, rgba(7, 15, 28, 0.15) 0%, rgba(7, 15, 28, 0.92) 85%);
+}
+
+.explore-card.engineering::before {
+    background-image: url("images/battlebot-cad.jpg");
+}
+
+.explore-card.gamedev::before {
+    background: linear-gradient(135deg, var(--navy-700), var(--navy-900));
+}
+
+.explore-card .explore-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--green-300);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.explore-card h3 {
+    font-size: 1.5rem;
+    color: var(--cream);
+    margin-bottom: 10px;
+}
+
+.explore-card p {
+    color: var(--text-light);
+    opacity: 0.85;
+    font-size: 0.95rem;
+    max-width: 380px;
+}
+
+.explore-card .explore-arrow {
+    margin-top: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--green-300);
+}
+
+.explore-card .explore-arrow svg {
+    transition: transform 0.2s ease;
+}
+
+.explore-card:hover .explore-arrow svg {
+    transform: translateX(4px);
+}
+
+/* ===== Project detail page ===== */
+.page-hero {
+    padding: 130px 0 50px;
+}
+
+.page-hero .eyebrow {
+    margin-bottom: 14px;
+}
+
+.page-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    color: var(--cream);
+    max-width: 700px;
+}
+
+.page-hero p {
+    max-width: 600px;
+    font-size: 1.05rem;
+    margin-top: 16px;
+}
+
+.project-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.project-detail-card {
+    background: var(--navy-800);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 32px;
+}
+
+.project-detail-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.project-detail-head h2 {
+    font-size: 1.5rem;
+    color: var(--cream);
+}
+
+.project-detail p {
+    font-size: 0.98rem;
+}
+
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.img-gallery figure {
+    margin: 0;
+    background: var(--navy-900);
+    border: 1px solid var(--border-soft);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    background: #fff;
+}
+
+.img-gallery img.fit-contain {
+    object-fit: contain;
+    height: 220px;
+    background: #f4f1e6;
+}
+
+.img-gallery figcaption {
+    padding: 10px 14px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-soft);
+}
+
+/* ===== Placeholder page (Game Dev - coming soon) ===== */
+.placeholder-wrap {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+}
+
+.placeholder-box {
+    max-width: 460px;
+}
+
+.placeholder-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    border-radius: 50%;
+    background: rgba(146, 201, 164, 0.1);
+    border: 1px solid rgba(146, 201, 164, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+}
+
+.placeholder-box h1 {
+    font-size: 1.8rem;
+    color: var(--cream);
+    margin-bottom: 14px;
+}
+
 /* ===== Contact CTA (index footer strip) ===== */
 .contact-cta {
     background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
@@ -679,7 +892,8 @@ footer.site-footer a {
 @media (max-width: 860px) {
     .about-grid,
     .project-grid,
-    .skills-grid {
+    .skills-grid,
+    .explore-grid {
         grid-template-columns: 1fr;
     }
 

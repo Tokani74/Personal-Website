@@ -19,8 +19,8 @@
             <div class="nav-links" id="navLinks">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
+                <a href="engineering.html">Engineering</a>
+                <a href="game-dev.html">YouTube &amp; Game Dev</a>
                 <a href="contact.html" class="btn btn-primary">Contact</a>
             </div>
         </div>
@@ -38,7 +38,7 @@
             </p>
             <div class="hero-actions">
                 <a href="Resume_Tanish_Kothapalle.pdf" class="btn btn-primary" target="_blank" rel="noopener">View Resume</a>
-                <a href="Engineering%20Portfolio.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Engineering Portfolio</a>
+                <a href="engineering.html" class="btn btn-ghost">Engineering Projects</a>
                 <a href="contact.html" class="btn btn-ghost">Get in Touch</a>
             </div>
             <div class="hero-meta">
@@ -180,107 +180,30 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="explore">
         <div class="container">
-            <span class="eyebrow">Projects</span>
-            <h2 class="section-heading">Things I've built</h2>
-            <p class="section-intro">
-                A mix of personal builds and team competitions, pulled from my
-                <a href="Engineering%20Portfolio.pdf" target="_blank" rel="noopener" style="color: var(--green-300); font-weight: 600;">full engineering portfolio</a>.
-            </p>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-top">
-                        <h3>AR Speech-to-Text Glasses</h3>
-                        <span class="status-tag status-ongoing">Ongoing</span>
-                    </div>
-                    <p>
-                        Custom AR glasses that display live subtitles on the lens — audio is captured, sent via
-                        Bluetooth to a phone or laptop for processing, and the resulting text is streamed back to
-                        the glasses. Includes a custom-modeled frame and two hand-assembled PCBs (power, and
-                        processing/display) designed in KiCad.
-                    </p>
-                    <div class="project-note">
-                        <strong>Obstacle:</strong> Inconsistent power delivery through the PCB. Solved by splitting
-                        the board into smaller, simpler boards for easier troubleshooting.
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-top">
-                        <h3>Hand-Tracking RC Plane</h3>
-                        <span class="status-tag status-complete">Completed</span>
-                    </div>
-                    <p>
-                        An RC plane built from scratch and flown by tracking hand movements through a webcam.
-                        Python + OpenCV reads finger joint motion, an Arduino relays the commands over radio to a
-                        second Arduino onboard controlling the servos.
-                    </p>
-                    <div class="project-note">
-                        <strong>Obstacle:</strong> Dialing in motor/propeller/weight ratios by trial and error —
-                        next time, calculating lift up front instead.
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-top">
-                        <h3>Nanoparticle Indentation Research</h3>
-                        <span class="status-tag status-complete">Published</span>
-                    </div>
-                    <p>
-                        LAMMPS simulations of high strain-rate aluminum nanoparticle collisions to find optimal
-                        impact velocity for micro-cold spray applications. Visualized results in Ovito and built
-                        publication-ready graphs from the raw simulation data.
-                    </p>
-                    <div class="project-note">
-                        <strong>Publication:</strong> "Simulation of High Strain Rate Contact of Single Crystal Al Spheres"
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-top">
-                        <h3>Battlebot</h3>
-                        <span class="status-tag status-complete">Team Competition</span>
-                    </div>
-                    <p>
-                        A combat robot designed to destroy opponents with a steel spinning weapon and a hardened
-                        3D-printed chassis — ramped surfaces, trusses, fillets, and bearings included for
-                        durability. Took over sole ownership of design and build when the rest of the team dropped off.
-                    </p>
-                    <div class="project-note">
-                        <strong>Obstacle:</strong> No prior Battlebots experience on the team. Next time: build a
-                        prototype earlier and leave room for revisions.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <div class="container">
-            <span class="eyebrow">Skills</span>
-            <h2 class="section-heading">What I bring to a team</h2>
-            <div class="skills-grid">
-                <div class="skills-card">
-                    <h3>Technical</h3>
-                    <div class="skills-tags">
-                        <span class="pill">Product Development</span>
-                        <span class="pill">Mechatronics</span>
-                        <span class="pill">CAD (Onshape, SolidWorks)</span>
-                        <span class="pill">PCB Design (KiCad)</span>
-                        <span class="pill">Python</span>
-                        <span class="pill">Manufacturing</span>
-                        <span class="pill">Content Creation</span>
-                    </div>
-                </div>
-                <div class="skills-card">
-                    <h3>Soft Skills</h3>
-                    <div class="skills-tags">
-                        <span class="pill">Leadership</span>
-                        <span class="pill">Project Management</span>
-                        <span class="pill">Quick Learner</span>
-                        <span class="pill">Critical Thinking</span>
-                        <span class="pill">Communication</span>
-                        <span class="pill">Inquisitive</span>
-                    </div>
-                </div>
+            <span class="eyebrow">Explore</span>
+            <h2 class="section-heading">See the work</h2>
+            <p class="section-intro">Two sides of what I build — pick a track.</p>
+            <div class="explore-grid">
+                <a href="engineering.html" class="explore-card engineering">
+                    <span class="explore-tag">Engineering</span>
+                    <h3>Engineering Projects</h3>
+                    <p>AR glasses, a hand-tracked RC plane, nanoparticle research, and a combat robot — CAD, PCBs, and builds.</p>
+                    <span class="explore-arrow">
+                        View projects
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </span>
+                </a>
+                <a href="game-dev.html" class="explore-card gamedev">
+                    <span class="explore-tag">Creative</span>
+                    <h3>YouTube &amp; Game Development</h3>
+                    <p>Content and game dev work — coming soon.</p>
+                    <span class="explore-arrow">
+                        Take a look
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </span>
+                </a>
             </div>
         </div>
     </section>
