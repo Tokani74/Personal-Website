@@ -154,15 +154,19 @@ section + section {
 }
 
 .nav-brand {
-    font-family: var(--font-head);
-    font-weight: 700;
-    font-size: 1.1rem;
-    letter-spacing: 0.02em;
-    color: var(--text-light);
+    display: flex;
+    align-items: center;
 }
 
-.nav-brand span {
-    color: var(--green-300);
+.nav-brand img {
+    height: 36px;
+    width: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.nav-brand:hover img {
+    transform: scale(1.08) rotate(-4deg);
 }
 
 .nav-links {
