@@ -17,6 +17,22 @@ if (navToggle && navLinks) {
     });
 }
 
+// Click-to-play YouTube: show a sharp thumbnail, load the real player on click
+document.querySelectorAll(".yt-facade").forEach((box) => {
+    const button = box.querySelector(".yt-play");
+    if (!button) return;
+    button.addEventListener("click", () => {
+        const iframe = document.createElement("iframe");
+        iframe.src = `https://www.youtube.com/embed/${box.dataset.videoId}?autoplay=1`;
+        iframe.title = box.dataset.title || "YouTube video";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.allowFullscreen = true;
+        box.replaceChildren(iframe);
+        iframe.focus();
+    });
+});
+
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightboxImg");
 const lightboxCaption = document.getElementById("lightboxCaption");
