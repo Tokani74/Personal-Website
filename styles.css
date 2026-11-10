@@ -27,6 +27,8 @@
 
 html {
     scroll-behavior: smooth;
+    /* Keep in-page jumps clear of the sticky nav bar */
+    scroll-padding-top: 110px;
 }
 
 body {
@@ -115,14 +117,13 @@ section + section {
 
 .btn-primary {
     background: linear-gradient(135deg, var(--green-400), var(--green-600));
-    color: var(--navy-950);
-    box-shadow: 0 10px 30px rgba(95, 163, 119, 0.35);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(95, 163, 119, 0.35);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 14px 36px rgba(95, 163, 119, 0.5);
+    box-shadow: 0 6px 16px rgba(95, 163, 119, 0.5);
 }
-
 .btn-ghost {
     background: rgba(238, 241, 245, 0.05);
     color: var(--text-light);
@@ -280,6 +281,11 @@ section + section {
     opacity: 0.88;
 }
 
+.hero-content .quote {
+    max-width: 560px;
+    margin-top: 24px;
+}
+
 .hero-actions {
     display: flex;
     flex-wrap: wrap;
@@ -322,6 +328,15 @@ section + section {
 .about-text p {
     font-size: 1.02rem;
     color: var(--text-muted);
+}
+
+/* Justify multi-line body paragraphs */
+.hero-sub,
+.about-text p,
+.section-intro,
+.project-detail p,
+.timeline-card li {
+    text-align: justify;
 }
 
 .quote {
@@ -640,7 +655,8 @@ section + section {
 }
 
 .explore-card.gamedev::before {
-    background: linear-gradient(135deg, var(--navy-700), var(--navy-900));
+    background-color: var(--navy-800);
+    background-image: url("images/game-jam-thumbnail.jpg");
 }
 
 .explore-card .explore-tag {
@@ -696,13 +712,21 @@ section + section {
 .page-hero h1 {
     font-size: clamp(2rem, 4.5vw, 3rem);
     color: var(--cream);
-    max-width: 700px;
 }
 
 .page-hero p {
     max-width: 600px;
     font-size: 1.05rem;
     margin-top: 16px;
+}
+
+.page-hero + section {
+    padding-top: 0;
+}
+
+/* Land jumps to the Game Development section closer to its heading */
+#game-dev {
+    scroll-margin-top: -70px;
 }
 
 .project-detail {
@@ -734,6 +758,97 @@ section + section {
 
 .project-detail p {
     font-size: 0.98rem;
+}
+
+/* Keep pixel art crisp when scaled */
+img.pixel-art,
+.lightbox-inner img.pixel-art {
+    image-rendering: pixelated;
+}
+
+.video-intro {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-bottom: 20px;
+}
+
+.video-intro p {
+    flex: 1;
+    max-width: 760px;
+    margin: 0;
+}
+
+.video-intro .btn {
+    flex: none;
+    margin-left: auto;
+}
+
+@media (max-width: 720px) {
+    .video-intro {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .video-intro .btn {
+        margin-left: 0;
+    }
+}
+
+.video-embed {
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--navy-900);
+}
+
+.game-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 440px) 1fr;
+    gap: 32px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.game-cover {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.game-cover:hover {
+    transform: translateY(-3px);
+}
+
+.game-cover img {
+    width: 100%;
+    aspect-ratio: 315 / 250;
+    object-fit: cover;
+}
+
+.game-info .btn {
+    margin-top: 8px;
+}
+
+.game-meta {
+    color: var(--text-muted-2);
+}
+
+@media (max-width: 720px) {
+    .game-feature {
+        grid-template-columns: 1fr;
+    }
+}
+
+.video-embed iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .img-gallery {
@@ -816,6 +931,22 @@ section + section {
     border-radius: 10px;
     background: #fff;
     box-shadow: var(--shadow);
+    position: relative;
+    z-index: 1;
+    transform-origin: 0 0;
+    cursor: zoom-in;
+    user-select: none;
+    transition: transform 0.08s ease-out;
+}
+
+.lightbox-inner img.zoomed {
+    cursor: grab;
+    touch-action: none;
+}
+
+.lightbox-inner img.dragging {
+    cursor: grabbing;
+    transition: none;
 }
 
 .lightbox-caption {
@@ -828,6 +959,7 @@ section + section {
 
 .lightbox-close {
     position: absolute;
+    z-index: 2;
     top: 20px;
     right: 24px;
     width: 42px;
@@ -883,6 +1015,8 @@ section + section {
 
 /* ===== Contact CTA (index footer strip) ===== */
 .contact-cta {
+    max-width: 620px;
+    margin: 0 auto;
     background: linear-gradient(135deg, var(--navy-800), var(--navy-900));
     border-radius: 20px;
     padding: 56px;

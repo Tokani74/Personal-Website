@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube &amp; Game Dev — Tanish Kothapalle</title>
-    <meta name="description" content="YouTube and game development projects by Tanish Kothapalle — coming soon.">
+    <meta name="description" content="YouTube videos and game development projects by Tanish Kothapalle.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=18">
 </head>
 <body>
 
@@ -26,15 +26,198 @@
         </div>
     </nav>
 
-    <section class="placeholder-wrap">
-        <div class="placeholder-box">
-            <div class="placeholder-icon">&#127916;</div>
-            <span class="eyebrow" style="justify-content:center; display:flex;">Creative</span>
+    <header class="page-hero">
+        <div class="container">
+            <span class="eyebrow">Creative</span>
             <h1>YouTube &amp; Game Development</h1>
-            <p>This page is under construction — content and game dev projects are coming soon.</p>
-            <a href="index.html" class="btn btn-ghost" style="margin-top: 20px;">&larr; Back to home</a>
+            <p>A collection of the videos and games I've worked on <u>this semester</u>.<br>Click the buttons below to navigate the page.</p>
+            <div class="hero-actions" style="margin-top: 24px;">
+                <a href="#youtube" class="btn btn-primary">Videos</a>
+                <a href="#game-dev" class="btn btn-primary">Game Development</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="youtube">
+        <div class="container">
+            <span class="eyebrow">YouTube</span>
+            <h2 class="section-heading">Videos</h2>
+        </div>
+        <div class="container project-detail" style="margin-top: 28px;">
+
+            <div class="project-detail-card" id="freeze-video">
+                <div class="project-detail-head">
+                    <h2>I Made My First Game in 48 Hours (why did I do this?)</h2>
+                    <span class="status-tag status-complete">Texas Game Jam 2026</span>
+                </div>
+                <div class="video-intro">
+                    <p>
+                        This is my first upload to my channel in 5 years. It was my first time editing in this format,
+                        and I learned a lot about clickable thumbnails, titles, and targeting audiences. This was also
+                        my first game I made. Considering the time constraints, we are very proud of what we accomplished.
+                    </p>
+                    <a href="#freeze-the-devil" class="btn btn-ghost">Play the game</a>
+                </div>
+                <div class="video-embed">
+                    <iframe
+                        src="https://www.youtube.com/embed/MAiHYzheklo"
+                        title="I Made My First Game in 48 Hours (why did I do this?)"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen></iframe>
+                </div>            </div>
+
+            <div class="project-detail-card" id="midknight-video">
+                <div class="project-detail-head">
+                    <h2>Mid-Knight Snack</h2>
+                    <span class="status-tag status-complete">alt.ctrl.GDC</span>
+                </div>
+                <div class="video-intro">
+                    <p>
+                        For the alt.ctrl.GDC Game Competition, you are tasked with making an alternative controller to
+                        play a game. Slight issue was teams usually spend months working on their controller, but
+                        my friend told me about the competition a week before the deadline. I gathered a team and
+                        converted a working mini-fridge into a controller that is used to play a game we designed.
+                        I plan to release a video on Mid-Knight Snack later this year.
+                    </p>
+                    <a href="#midknight-snack" class="btn btn-ghost">See the Game</a>
+                </div>
+                <div class="video-embed">
+                    <iframe
+                        src="https://www.youtube.com/embed/dvag8pVZFcs"
+                        title="Mid-Knight Snack | alt.ctrl.GDC Submission"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="project-detail-card" id="customer-needs-video">
+                <div class="project-detail-head">
+                    <h2>Me 366J: Customer Needs Analysis</h2>
+                    <span class="status-tag status-complete">Class Assignment</span>
+                </div>
+                <div class="video-intro">
+                    <p>
+                        Submission for my Senior Design Class where I was asked to talk about a topic we've learned:
+                        I chose Customer Needs Analysis. Made in a few hours at midnight :/
+                    </p>
+                </div>
+                <div class="video-embed">
+                    <iframe
+                        src="https://www.youtube.com/embed/vA66BhrYSzE"
+                        title="Me 366J: Customer Needs Analysis"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        loading="lazy"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+
         </div>
     </section>
+
+    <section id="game-dev">
+        <div class="container">
+            <span class="eyebrow">Game Dev</span>
+            <h2 class="section-heading">Game Development</h2>
+        </div>
+        <div class="container project-detail" style="margin-top: 28px;">
+
+            <div class="project-detail-card" id="freeze-the-devil">
+                <div class="project-detail-head">
+                    <h2>Freeze The Devil</h2>
+                    <span class="status-tag status-complete">Texas Game Jam 2026</span>
+                </div>
+                <div class="game-feature">
+                    <a href="https://kemblebee.itch.io/freezethedevil" class="game-cover" target="_blank" rel="noopener">
+                        <img src="images/freeze-the-devil.png" alt="Freeze The Devil cover art">
+                    </a>
+                    <div class="game-info">
+                        <p>Made in 48 hours. Features 5 unique levels, past-present time switching, boss fight, and story. I primarily worked on the audio, UI, and level design.<br><br>Collaborated with Kemblebee and Harrison Floyd.</p>
+                        <p class="game-meta">Play it in your browser or download it for Windows on itch.io.</p>
+                        <div class="hero-actions" style="margin-top: 8px;">
+                            <a href="https://kemblebee.itch.io/freezethedevil" class="btn btn-primary" target="_blank" rel="noopener">Play on itch.io</a>
+                            <a href="#freeze-video" class="btn btn-ghost">Watch the video</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="img-gallery">
+                    <figure>
+                        <img src="images/freeze-1.jpg" alt="Hand-drawn story sketch of the ice cube hero">
+                        <figcaption>Hand-drawn story art for the ice cube hero</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/freeze-2.png" alt="A Freeze The Devil level with the time-switch hourglass in the corner" class="pixel-art">
+                        <figcaption>One of the levels, with the time-switch hourglass in the top-left corner</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/freeze-3.png" alt="The boss fight against the devil" class="pixel-art">
+                        <figcaption>The boss fight against the devil</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="project-detail-card" id="midknight-snack">
+                <div class="project-detail-head">
+                    <h2>Mid-Knight Snack</h2>
+                    <span class="status-tag status-complete">alt.ctrl.GDC</span>
+                </div>
+                <div class="video-intro">
+                    <p>
+                        Our controller is a fridge. A fully functional one! It was never designed to guide a knight on a
+                        midnight snack run, or to power a live, zero-input-lag game while you reach in for an ice-cold
+                        soda, but that’s exactly what it does here. Instead of thumbsticks, you open and close the fridge
+                        doors to control the action. Instead of buttons, you grab real food from the correct plate lit up
+                        by LEDs inside the fridge once you collect enough of that food in the game, with laser-cut props
+                        and magnet switches translating each motion into gameplay. It’s a hands-on, physical experience
+                        that feels a little silly but is a whole lot of fun. And as far as we know, it’s the only
+                        real-time controller out there that keeps your chicken nuggets frozen and your drinks cold while
+                        you play.<br><br>I mainly worked on the electronics, music, and video submission.<br><br>Collaborated with Ritz Song, Kemblebee, and Harrison Floyd.
+                    </p>
+                    <a href="#midknight-video" class="btn btn-ghost">Watch the video</a>
+                </div>
+                <div class="img-gallery">
+                    <figure>
+                        <img src="images/midknight-2.jpg?v=2" alt="Gameplay shown next to a player at the fridge controller">
+                        <figcaption>Gameplay alongside a player opening the fridge. As seen in the image, the opening of the fridge opens the fridge in the game.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/midknight-3.jpg?v=2" alt="The fridge open and stocked with prop food and drinks">
+                        <figcaption>The fridge with controllers and prop-food switches attached. As it's a functional fridge, it is stocked with food and drinks.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/midknight-1.jpg?v=2" alt="A player grabbing an item from the fridge while the game plays on a wall-mounted TV">
+                        <figcaption>A player grabbing an item in the fridge to beat the game.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-cta">
+                <h2>Doors Always Open</h2>
+                <p>See something you like? Feel free to reach out.<br>I'm always looking for a new adventure.</p>
+                <div class="hero-actions">
+                    <a href="contact.html" class="btn btn-primary">Contact Me</a>
+                    <a href="Resume_Tanish_Kothapalle.pdf" class="btn btn-ghost" target="_blank" rel="noopener">Download Resume</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+        <div class="lightbox-inner">
+            <img id="lightboxImg" src="" alt="">
+            <p class="lightbox-caption" id="lightboxCaption"></p>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="container">
@@ -42,6 +225,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=7"></script>
 </body>
 </html>
